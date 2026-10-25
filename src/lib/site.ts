@@ -24,8 +24,19 @@ export const person = {
 	linkedin: 'https://www.linkedin.com/in/calebe-dev',
 	github: 'https://github.com/Calebe-Dev',
 	city: 'Sorocaba',
-	country: 'Brazil'
+	country: 'Brazil',
+	// emprego atual, o mesmo do schema de autor no calebearaujo.com.br
+	employer: { name: 'Grupo OC', url: 'https://grupooc.com.br/' }
 };
+
+// Perfis oficiais: os mesmos do sameAs do autor no calebearaujo.com.br (entidade única nos dois sites)
+export const socials = [
+	{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/calebe-dev' },
+	{ name: 'GitHub', url: 'https://github.com/Calebe-Dev' },
+	{ name: 'YouTube', url: 'https://www.youtube.com/@calebe_tech' },
+	{ name: 'Instagram', url: 'https://www.instagram.com/calebe_original/' },
+	{ name: 'Facebook', url: 'https://www.facebook.com/calebearaujo101/' }
+];
 
 export const contact = {
 	// provisório: trocar por hello@rankingfixer.com quando o Email Routing da Cloudflare estiver ativo

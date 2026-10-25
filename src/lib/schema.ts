@@ -1,6 +1,6 @@
 // Construtores de JSON-LD (schema.org). Cada página monta um @graph com estes nós;
 // o conteúdo marcado deve ser sempre o mesmo que está visível no HTML.
-import { BRAND, SITE_URL, UPDATED, contact, dateModified, datePublished, industries, logo, menu, pageKeywords, person, services, shareCard } from './site';
+import { BRAND, SITE_URL, UPDATED, contact, dateModified, datePublished, industries, logo, menu, pageKeywords, person, services, shareCard, socials } from './site';
 
 export type Faq = { question: string; answer: string };
 export type Crumb = { name: string; path: string };
@@ -30,7 +30,7 @@ export const personNode = () => ({
 	url: person.homepage,
 	jobTitle: person.jobTitle,
 	homeLocation: { '@type': 'City', name: person.city, containedInPlace: { '@type': 'Country', name: person.country } },
-	worksFor: { '@id': ORG_ID },
+	worksFor: [{ '@id': ORG_ID }, { '@type': 'Organization', ...person.employer }],
 	knowsLanguage: [
 		{ '@type': 'Language', name: 'English', alternateName: 'en' },
 		{ '@type': 'Language', name: 'Portuguese', alternateName: 'pt-BR' }
@@ -46,7 +46,7 @@ export const personNode = () => ({
 		'Full-stack development',
 		'Cloudflare'
 	],
-	sameAs: [person.homepage, person.linkedin, person.github]
+	sameAs: socials.map((s) => s.url)
 });
 
 export const websiteNode = () => ({
