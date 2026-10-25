@@ -13,7 +13,8 @@ Same stack as [calebearaujo.com.br](https://calebearaujo.com.br): SvelteKit with
 | `npm run cards` | Generates the 1200×630 share card of each page from the build (needs Chrome and ffmpeg) |
 | `npm run preview` | Build and serve locally with Wrangler |
 | `npm run check` | Type and template checks |
+| `npm run indexnow` | Notifies IndexNow (Bing and others) of every URL in the live sitemap; `-- /path` sends only some pages |
 
-New page: create `src/routes/<path>/+page.svelte`, register it in `src/lib/site.ts`, run `npm run build && npm run cards && npm run build`. The sitemap picks it up on its own.
+New page: create `src/routes/<path>/+page.svelte`, register it in `src/lib/site.ts`, run `npm run build && npm run cards && npm run build`. The sitemap picks it up on its own, and the IndexNow workflow (`.github/workflows/indexnow.yml`) notifies Bing of changed pages after each deploy.
 
 Maintained by [Calebe Araujo](https://calebearaujo.com.br).

@@ -10,7 +10,8 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"deploy": "npm run build && wrangler deploy",
-		"cards": "node scripts/generate-cards.mjs"
+		"cards": "node scripts/generate-cards.mjs",
+		"indexnow": "node scripts/indexnow.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^7.2.9",
