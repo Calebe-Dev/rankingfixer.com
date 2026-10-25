@@ -1,0 +1,17 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	// Nome do Worker na Cloudflare (no Workers Builds o nome do dashboard prevalece)
+	"name": "rankingfixer",
+	"compatibility_date": "2026-10-01",
+	// AsyncLocalStorage é usado pelo SvelteKit (getRequestEvent)
+	"compatibility_flags": ["nodejs_als"],
+	// Saída do @sveltejs/adapter-cloudflare: páginas pré-renderizadas são servidas direto dos assets
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	},
+	"observability": {
+		"enabled": true
+	}
+}

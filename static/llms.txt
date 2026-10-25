@@ -1,0 +1,29 @@
+# Ranking Fixer
+
+> Ranking Fixer (rankingfixer.com) is a technical SEO consultancy run by Calebe Araujo, a full-stack developer and tech lead based in Sorocaba, Brazil, working remotely with businesses and agencies in the United States and other English-speaking countries. It finds the technical problems that keep websites from ranking on Google and implements the fixes in the code, the theme or the CMS. Contact: calebe.development@gmail.com.
+
+Verifiable results cited on the site: page load cut from 8 s to 1 s after migrating legacy systems to Angular and Svelte; a microservices CRM integrating 25 sites; 60+ landing pages and business websites shipped with technical SEO; 100/100 Lighthouse scores on calebearaujo.com.br. Ranking Fixer does not guarantee rankings, buy links or sell content packages.
+
+## Services
+
+- [Technical SEO audit](https://rankingfixer.com/technical-seo-audit): crawling, indexing, rendering, speed and structured data, ranked by impact, with fixes implemented.
+- [Core Web Vitals optimization](https://rankingfixer.com/core-web-vitals-fix): LCP, INP and CLS fixed at the source.
+- [Google indexing fixes](https://rankingfixer.com/google-indexing-issues): Search Console page indexing errors.
+- [SEO website migration](https://rankingfixer.com/seo-website-migration): redesigns, replatforming, domain changes and traffic drop recovery.
+
+## Who it is for
+
+- [White label technical SEO for agencies](https://rankingfixer.com/white-label-technical-seo)
+- [Technical SEO for law firms](https://rankingfixer.com/technical-seo-for-law-firms)
+- [Ecommerce technical SEO](https://rankingfixer.com/ecommerce-technical-seo)
+
+## Guides
+
+- [Why is my website not showing up on Google?](https://rankingfixer.com/guides/website-not-showing-on-google)
+- [Crawled - currently not indexed: how to fix it](https://rankingfixer.com/guides/crawled-currently-not-indexed)
+- [Core Web Vitals assessment failed: how to fix it](https://rankingfixer.com/guides/core-web-vitals-assessment-failed)
+
+## About
+
+- [About Ranking Fixer and Calebe Araujo](https://rankingfixer.com/about)
+- Personal site: https://calebearaujo.com.br/

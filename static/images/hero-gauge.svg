@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12c26b"/><stop offset="1" stop-color="#7ee2a8"/></linearGradient>
+  </defs>
+  <g transform="translate(24 40)">
+    <rect width="150" height="190" rx="22" fill="#121b30" stroke="#24314d"/>
+    <circle cx="75" cy="78" r="44" stroke="#2a1820" stroke-width="10"/>
+    <circle cx="75" cy="78" r="44" stroke="#ff4e42" stroke-width="10" stroke-linecap="round" stroke-dasharray="105 277" transform="rotate(-90 75 78)"/>
+    <text x="75" y="91" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" font-weight="800" fill="#ff8a80">38</text>
+    <rect x="28" y="142" width="94" height="10" rx="5" fill="#24314d"/>
+    <rect x="28" y="160" width="64" height="10" rx="5" fill="#24314d"/>
+  </g>
+  <path d="M190 135h36m0 0l-12-12m12 12l-12 12" stroke="#5b6b8c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(246 20)">
+    <rect width="150" height="230" rx="22" fill="#0f2a22" stroke="#1d5c43"/>
+    <circle cx="75" cy="88" r="50" stroke="#123d2c" stroke-width="11"/>
+    <circle cx="75" cy="88" r="50" stroke="url(#g)" stroke-width="11" stroke-linecap="round" stroke-dasharray="314 314" transform="rotate(-90 75 88)"/>
+    <text x="75" y="103" text-anchor="middle" font-family="system-ui,sans-serif" font-size="42" font-weight="800" fill="#7ee2a8">100</text>
+    <path d="M38 168l12 12 22-24" stroke="#12c26b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="84" y="164" width="40" height="10" rx="5" fill="#1d5c43"/>
+    <rect x="28" y="196" width="96" height="10" rx="5" fill="#1d5c43"/>
+  </g>
+</svg>
