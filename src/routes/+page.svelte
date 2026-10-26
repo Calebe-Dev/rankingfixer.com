@@ -4,7 +4,7 @@
 	import Faq from '$lib/components/Faq.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { pageGraph, type Faq as FaqItem } from '$lib/schema';
-	import { aboutPage, guides, guidesPage, industries, person, services, type Email } from '$lib/site';
+	import { aboutPage, guides, guidesPage, industries, markets, person, services, type Email } from '$lib/site';
 
 	const path = '/';
 	const title = 'Technical SEO Fixes Done by a Developer | Ranking Fixer';
@@ -180,6 +180,16 @@
 				<span class="tag">Online stores</span>
 				<h3><a href={industries.ecommerce.path}>{industries.ecommerce.name}</a></h3>
 				<p>Faceted navigation, product variants, unindexed collections and platform migrations.</p>
+			</li>
+			<li>
+				<span class="tag">Canada</span>
+				<h3><a href={markets.canada.path}>{markets.canada.name}</a></h3>
+				<p>Bilingual English and French sites, Canada and US targeting, Eastern time working hours.</p>
+			</li>
+			<li>
+				<span class="tag">New Zealand</span>
+				<h3><a href={markets.newZealand.path}>{markets.newZealand.name}</a></h3>
+				<p>Sites serving New Zealand and Australia, slow overseas hosting, launches during NZ night.</p>
 			</li>
 		</ul>
 	</section>

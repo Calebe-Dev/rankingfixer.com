@@ -74,6 +74,13 @@ export const industries = {
 	ecommerce: { path: '/ecommerce-technical-seo', name: 'Ecommerce technical SEO' }
 } as const;
 
+// Páginas por país: só onde a pesquisa mostrou busca com localização e há problemas técnicos próprios
+// do mercado (ver estudos/geo-regioes-alta-renda.md). Atendimento remoto, sem endereço local.
+export const markets = {
+	canada: { path: '/technical-seo-canada', name: 'Technical SEO in Canada', country: 'Canada' },
+	newZealand: { path: '/technical-seo-new-zealand', name: 'Technical SEO in New Zealand', country: 'New Zealand' }
+} as const;
+
 export const guidesPage = { path: '/guides', name: 'Guides' };
 export const guides = {
 	notShowing: { path: '/guides/website-not-showing-on-google', name: 'Website not showing on Google' },
@@ -92,7 +99,11 @@ export const logo = { path: '/images/logo-512.png', width: 512, height: 512 };
 // Menu principal: grupos com subitens (dropdown no desktop, painel no celular)
 export const menu = [
 	{ label: 'Services', href: '/#services', itens: Object.values(services).map((s) => ({ label: s.name, href: s.path })) },
-	{ label: 'Who it is for', href: '/#industries', itens: Object.values(industries).map((s) => ({ label: s.name, href: s.path })) },
+	{
+		label: 'Who it is for',
+		href: '/#industries',
+		itens: [...Object.values(industries), ...Object.values(markets)].map((s) => ({ label: s.name, href: s.path }))
+	},
 	{
 		label: 'Guides',
 		href: guidesPage.path,
@@ -104,7 +115,11 @@ export const menu = [
 // Mapa do site resumido (rodapé)
 export const siteGroups = [
 	{ id: 'services', title: 'Services', entries: Object.values(services).map((s) => ({ href: s.path, text: s.name })) },
-	{ id: 'industries', title: 'Who it is for', entries: Object.values(industries).map((s) => ({ href: s.path, text: s.name })) },
+	{
+		id: 'industries',
+		title: 'Who it is for',
+		entries: [...Object.values(industries), ...Object.values(markets)].map((s) => ({ href: s.path, text: s.name }))
+	},
 	{ id: 'guides', title: 'Guides', entries: Object.values(guides).map((g) => ({ href: g.path, text: g.name })) },
 	{
 		id: 'company',
@@ -193,7 +208,11 @@ export const pageKeywords: Record<string, string[]> = {
 		'schema markup for law firms',
 		'schema for lawyers',
 		'law firm website redesign',
-		'does seo work for law firms'
+		'does seo work for law firms',
+		'law firm seo nyc',
+		'law firm seo los angeles',
+		'law firm seo houston',
+		'law firm seo toronto'
 	],
 	'/ecommerce-technical-seo': [
 		'ecommerce technical seo',
@@ -205,6 +224,27 @@ export const pageKeywords: Record<string, string[]> = {
 		'ecommerce platform migration services',
 		'faceted navigation seo',
 		'ecommerce site speed'
+	],
+	'/technical-seo-canada': [
+		'technical seo canada',
+		'seo expert canada',
+		'seo specialist canada',
+		'freelance seo canada',
+		'technical seo toronto',
+		'seo audit toronto',
+		'seo consultant toronto',
+		'seo audit vancouver',
+		'seo consultant vancouver',
+		'seo consultant ottawa'
+	],
+	'/technical-seo-new-zealand': [
+		'technical seo new zealand',
+		'seo consultant nz',
+		'seo specialist nz',
+		'seo specialist new zealand',
+		'seo expert nz',
+		'seo consultant auckland',
+		'technical seo christchurch'
 	],
 	'/guides': ['technical seo guides', 'technical seo tutorial', 'google search console errors'],
 	'/guides/website-not-showing-on-google': [

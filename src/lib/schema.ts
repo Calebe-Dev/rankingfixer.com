@@ -1,6 +1,6 @@
 // Construtores de JSON-LD (schema.org). Cada página monta um @graph com estes nós;
 // o conteúdo marcado deve ser sempre o mesmo que está visível no HTML.
-import { BRAND, SITE_URL, UPDATED, contact, dateModified, datePublished, industries, logo, menu, pageKeywords, person, services, shareCard, socials } from './site';
+import { BRAND, SITE_URL, UPDATED, contact, dateModified, datePublished, industries, logo, markets, menu, pageKeywords, person, services, shareCard, socials } from './site';
 
 export type Faq = { question: string; answer: string };
 export type Crumb = { name: string; path: string };
@@ -19,7 +19,8 @@ const imageId = (path: string) => `${absolute(path)}#image`;
 const areaServed = [
 	{ '@type': 'Country', name: 'United States' },
 	{ '@type': 'Country', name: 'Canada' },
-	{ '@type': 'Country', name: 'United Kingdom' }
+	{ '@type': 'Country', name: 'United Kingdom' },
+	{ '@type': 'Country', name: 'New Zealand' }
 ];
 
 export const personNode = () => ({
@@ -97,7 +98,7 @@ export const organizationNode = () => ({
 	hasOfferCatalog: {
 		'@type': 'OfferCatalog',
 		name: 'Technical SEO services',
-		itemListElement: [...Object.values(services), ...Object.values(industries)].map((s) => ({
+		itemListElement: [...Object.values(services), ...Object.values(industries), ...Object.values(markets)].map((s) => ({
 			'@type': 'Offer',
 			itemOffered: { '@type': 'Service', name: s.name, url: absolute(s.path) }
 		}))
@@ -179,7 +180,15 @@ export const breadcrumbNode = (path: string, crumbs: Crumb[]) => ({
 	}))
 });
 
-export const serviceNode = (opts: { path: string; name: string; description: string; serviceType: string; audience?: string }) => ({
+export const serviceNode = (opts: {
+	path: string;
+	name: string;
+	description: string;
+	serviceType: string;
+	audience?: string;
+	// páginas por país: só aquele país
+	country?: string;
+}) => ({
 	'@type': 'Service',
 	'@id': `${absolute(opts.path)}#service`,
 	name: opts.name,
@@ -188,7 +197,7 @@ export const serviceNode = (opts: { path: string; name: string; description: str
 	url: absolute(opts.path),
 	provider: { '@id': ORG_ID },
 	image: { '@id': imageId(opts.path) },
-	areaServed,
+	areaServed: opts.country ? { '@type': 'Country', name: opts.country } : areaServed,
 	availableChannel: { '@type': 'ServiceChannel', serviceUrl: absolute(opts.path), availableLanguage: 'English' },
 	...(opts.audience ? { audience: { '@type': 'BusinessAudience', audienceType: opts.audience } } : {})
 });

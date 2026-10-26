@@ -6,7 +6,7 @@
 	import Related from '$lib/components/Related.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { pageGraph, type Faq as FaqItem } from '$lib/schema';
-	import { guides, industries, services, type Email } from '$lib/site';
+	import { guides, industries, markets, services, type Email } from '$lib/site';
 
 	const path = industries.lawFirms.path;
 	const title = 'Technical SEO for Law Firms: Audit and Fixes | Ranking Fixer';
@@ -179,6 +179,22 @@
 			a new layout, and redirects are left for later. I map every ranking URL to its new address, check
 			the new site before launch and monitor the weeks after. Details on the
 			<a href={services.migration.path}>SEO website migration</a> page.
+		</p>
+	</section>
+
+	<section aria-labelledby="markets-title">
+		<h2 id="markets-title">Law firm SEO in New York, Los Angeles, Houston and Toronto</h2>
+		<p>
+			The biggest legal markets are where technical problems cost the most: personal injury, family and
+			immigration searches in these cities are fought between firms with similar content, reviews and
+			budgets. A slow mobile page or a practice area that is not indexed hands the client to the next result.
+		</p>
+		<p>
+			I work remotely, so a firm in New York, Los Angeles, Houston or Toronto gets the same audit and the
+			same fixes. What changes is the competition and the advertising rules: in Ontario, for example, the
+			Law Society limits who can be described as a specialist, and the markup must follow the same rule as
+			the page. Canadian firms with French pages will find the bilingual setup covered on the
+			<a href={markets.canada.path}>technical SEO in Canada</a> page.
 		</p>
 	</section>
 

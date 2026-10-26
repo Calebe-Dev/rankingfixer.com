@@ -23,6 +23,8 @@ const label = (slug) => {
 	if (slug.startsWith('guides-')) return 'Technical SEO guide';
 	if (slug === 'about') return 'About';
 	if (['white-label-technical-seo', 'technical-seo-for-law-firms', 'ecommerce-technical-seo'].includes(slug)) return 'Who it is for';
+	if (slug === 'technical-seo-canada') return 'Remote, for Canadian businesses';
+	if (slug === 'technical-seo-new-zealand') return 'Remote, for New Zealand businesses';
 	return 'Service';
 };
 
