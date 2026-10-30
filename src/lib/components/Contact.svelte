@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import EmailCta from '$lib/components/EmailCta.svelte';
-	import { UPDATED, contact, defaultEmail, emailLink, person, type Email } from '$lib/site';
+	import { contact, defaultEmail, emailLink, modifiedDate, pageLang, person, type Email } from '$lib/site';
 
 	let {
 		title = 'Send me the site that is not ranking',
@@ -8,11 +9,15 @@
 		email = defaultEmail
 	}: { title?: string; intro?: string; email?: Email } = $props();
 
-	const updatedLabel = new Date(`${UPDATED}T12:00:00`).toLocaleDateString('en-US', {
-		day: 'numeric',
-		month: 'long',
-		year: 'numeric'
-	});
+	// mesma data do dateModified do schema e do lastmod do sitemap, no formato do idioma da página
+	const updated = $derived(modifiedDate(page.url.pathname));
+	const updatedLabel = $derived(
+		new Date(`${updated}T12:00:00`).toLocaleDateString(pageLang(page.url.pathname), {
+			day: 'numeric',
+			month: 'long',
+			year: 'numeric'
+		})
+	);
 </script>
 
 <section id="contact" class="contact" aria-labelledby="contact-title">
@@ -28,4 +33,4 @@
 	</address>
 </section>
 
-<p class="updated">Page updated on <time datetime={UPDATED}>{updatedLabel}</time>.</p>
+<p class="updated">Page updated on <time datetime={updated}>{updatedLabel}</time>.</p>

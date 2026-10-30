@@ -1,11 +1,12 @@
 # Ranking Fixer
 
-> Ranking Fixer (rankingfixer.com) is a technical SEO consultancy run by Calebe Araujo, a full-stack developer and tech lead based in Sorocaba, Brazil, working remotely with businesses and agencies in the United States and other English-speaking countries. It finds the technical problems that keep websites from ranking on Google and implements the fixes in the code, the theme or the CMS. Contact: calebe.development@gmail.com.
+> Ranking Fixer (rankingfixer.com) is a technical SEO consultancy run by Calebe Araujo, a full-stack developer and tech lead based in Sorocaba, Brazil, working remotely with businesses and agencies in the United States, the United Kingdom, Canada and New Zealand. It finds the technical problems that keep websites from ranking on Google and implements the fixes in the code, the theme or the CMS. Contact: calebe.development@gmail.com.
 
-Verifiable results cited on the site: page load cut from 8 s to 1 s after migrating legacy systems to Angular and Svelte; a microservices CRM integrating 25 sites; 60+ landing pages and business websites shipped with technical SEO; 100/100 Lighthouse scores on calebearaujo.com.br. Ranking Fixer does not guarantee rankings, buy links or sell content packages.
+Background: building websites since 2015, first as a freelancer; today a full-stack developer and tech lead specialized in CMS integrations across multiple websites (headless CMS and APIs) and in web performance optimization. Ranking Fixer does not guarantee rankings, buy links or sell content packages.
 
 ## Services
 
+- [Home](https://rankingfixer.com/): overview of the technical SEO services and how the work runs.
 - [Technical SEO audit](https://rankingfixer.com/technical-seo-audit): crawling, indexing, rendering, speed and structured data, ranked by impact, with fixes implemented.
 - [Core Web Vitals optimization](https://rankingfixer.com/core-web-vitals-fix): LCP, INP and CLS fixed at the source.
 - [Google indexing fixes](https://rankingfixer.com/google-indexing-issues): Search Console page indexing errors.
@@ -17,8 +18,17 @@ Verifiable results cited on the site: page load cut from 8 s to 1 s after migrat
 - [Technical SEO for law firms](https://rankingfixer.com/technical-seo-for-law-firms)
 - [Ecommerce technical SEO](https://rankingfixer.com/ecommerce-technical-seo)
 
+## Countries
+
+- [Technical SEO in the UK](https://rankingfixer.com/technical-seo-uk): cookie consent banners and Core Web Vitals, UK and Ireland versions, VAT in product data, SRA requirements for solicitors.
+- [Technical SEO in Canada](https://rankingfixer.com/technical-seo-canada): bilingual English and French sites, Bill 96 for stores selling to Quebec, Canada and US targeting.
+- [Technical SEO in New Zealand](https://rankingfixer.com/technical-seo-new-zealand): sites serving New Zealand and Australia, .co.nz domains, remote work across the time difference.
+
+All countries are served remotely; Ranking Fixer has no local offices.
+
 ## Guides
 
+- [All technical SEO guides](https://rankingfixer.com/guides)
 - [Why is my website not showing up on Google?](https://rankingfixer.com/guides/website-not-showing-on-google)
 - [Crawled - currently not indexed: how to fix it](https://rankingfixer.com/guides/crawled-currently-not-indexed)
 - [Core Web Vitals assessment failed: how to fix it](https://rankingfixer.com/guides/core-web-vitals-assessment-failed)

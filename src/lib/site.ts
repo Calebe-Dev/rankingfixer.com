@@ -3,15 +3,28 @@
 export const SITE_URL = 'https://rankingfixer.com';
 export const BRAND = 'Ranking Fixer';
 
-// Data da última revisão do conteúdo (lastmod do sitemap e "updated" das páginas)
-export const UPDATED = '2026-10-25';
-
-// Datas completas (ISO 8601 com fuso de Brasília), formato que o Google pede nos dados estruturados
+// Datas de cada página, completas (ISO 8601 com fuso de Brasília), formato que o Google pede nos dados
+// estruturados. Publicação: lançamento em 25/10/2026; páginas criadas depois têm a própria data.
+// Alteração: última mudança relevante, no critério do Google para o lastmod do sitemap: conteúdo
+// principal, dados estruturados ou links. Mudanças que valem para todas as páginas (schema, menu)
+// atualizam SITEWIDE; as de uma página só entram em modifiedOn. As mesmas datas alimentam o JSON-LD,
+// os metadados Open Graph, o lastmod do sitemap e o "Page updated on".
 const TIME = 'T09:00:00-03:00';
 const LAUNCH = '2026-10-25';
-const publishedOn: Record<string, string> = {};
-export const datePublished = (path: string) => `${publishedOn[path] ?? LAUNCH}${TIME}`;
-export const dateModified = `${UPDATED}${TIME}`;
+// 26/10/2026: dados estruturados ampliados e Reino Unido no menu de todas as páginas
+const SITEWIDE = '2026-10-26';
+const publishedOn: Record<string, string> = {
+	'/technical-seo-uk': '2026-10-26'
+};
+const modifiedOn: Record<string, string> = {};
+const latest = (...dates: (string | undefined)[]) => dates.filter(Boolean).sort().at(-1) as string;
+export const publishedDate = (path: string) => publishedOn[path] ?? LAUNCH;
+export const modifiedDate = (path: string) => latest(publishedDate(path), SITEWIDE, modifiedOn[path]);
+export const datePublished = (path: string) => `${publishedDate(path)}${TIME}`;
+export const dateModified = (path: string) => `${modifiedDate(path)}${TIME}`;
+
+// Data mais recente de todo o site (copyright e llms.txt)
+export const UPDATED = latest(LAUNCH, SITEWIDE, ...Object.values(publishedOn), ...Object.values(modifiedOn));
 
 // Responsável pelo site. O @id é o mesmo da página pessoal (calebearaujo.com.br): os dois sites
 // descrevem a mesma entidade, e o Google consolida os sinais de autoria nela.
@@ -23,8 +36,12 @@ export const person = {
 	homepage: 'https://calebearaujo.com.br/',
 	linkedin: 'https://www.linkedin.com/in/calebe-dev',
 	github: 'https://github.com/Calebe-Dev',
+	description:
+		'Full-stack developer and tech lead building websites since 2015, first as a freelancer. Audits websites and fixes technical SEO problems in the code: indexing, Core Web Vitals, structured data and migrations.',
 	city: 'Sorocaba',
+	region: 'SP',
 	country: 'Brazil',
+	countryCode: 'BR',
 	// emprego atual, o mesmo do schema de autor no calebearaujo.com.br
 	employer: { name: 'Grupo OC', url: 'https://grupooc.com.br/' }
 };
@@ -76,10 +93,16 @@ export const industries = {
 
 // Páginas por país: só onde a pesquisa mostrou busca com localização e há problemas técnicos próprios
 // do mercado (ver estudos/geo-regioes-alta-renda.md). Atendimento remoto, sem endereço local.
+// `lang`: a página é escrita no inglês do país (grafia e termos locais) e se declara assim no
+// <html lang>, no inLanguage, no og:locale e no hreflang.
 export const markets = {
-	canada: { path: '/technical-seo-canada', name: 'Technical SEO in Canada', country: 'Canada' },
-	newZealand: { path: '/technical-seo-new-zealand', name: 'Technical SEO in New Zealand', country: 'New Zealand' }
+	uk: { path: '/technical-seo-uk', name: 'Technical SEO in the UK', country: 'United Kingdom', lang: 'en-GB' },
+	canada: { path: '/technical-seo-canada', name: 'Technical SEO in Canada', country: 'Canada', lang: 'en-CA' },
+	newZealand: { path: '/technical-seo-new-zealand', name: 'Technical SEO in New Zealand', country: 'New Zealand', lang: 'en-NZ' }
 } as const;
+
+// Idioma de cada página: inglês dos EUA por padrão; páginas por país no inglês local
+export const pageLang = (path: string): string => Object.values(markets).find((m) => m.path === path)?.lang ?? 'en-US';
 
 export const guidesPage = { path: '/guides', name: 'Guides' };
 export const guides = {
@@ -93,6 +116,9 @@ export const aboutPage = { path: '/about', name: 'About' };
 // Card de compartilhamento de cada página (gerado por npm run cards a partir do build)
 export const shareCard = (path: string) =>
 	`/images/share/${path === '/' ? 'home' : path.slice(1).replace(/\//g, '-')}.jpg`;
+
+// Imagens extras dos guias, nas proporções que o Google recomenda para artigos (npm run cards)
+export const articleImage = (path: string, ratio: '16x9' | '4x3' | '1x1') => shareCard(path).replace('.jpg', `-${ratio}.jpg`);
 
 export const logo = { path: '/images/logo-512.png', width: 512, height: 512 };
 
@@ -245,6 +271,20 @@ export const pageKeywords: Record<string, string[]> = {
 		'seo expert nz',
 		'seo consultant auckland',
 		'technical seo christchurch'
+	],
+	'/technical-seo-uk': [
+		'technical seo uk',
+		'technical seo london',
+		'seo audit uk',
+		'seo audit london',
+		'seo audit services uk',
+		'freelance seo uk',
+		'seo freelancer london',
+		'seo for solicitors',
+		'shopify seo uk',
+		'white label seo uk',
+		'cookie banner requirements uk',
+		'hreflang uk'
 	],
 	'/guides': ['technical seo guides', 'technical seo tutorial', 'google search console errors'],
 	'/guides/website-not-showing-on-google': [

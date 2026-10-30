@@ -1,7 +1,25 @@
 // Construtores de JSON-LD (schema.org). Cada página monta um @graph com estes nós;
 // o conteúdo marcado deve ser sempre o mesmo que está visível no HTML.
-import { BRAND, SITE_URL, UPDATED, contact, dateModified, datePublished, industries, logo, markets, menu, pageKeywords, person, services, shareCard, socials } from './site';
-
+import {
+	BRAND,
+	SITE_URL,
+	UPDATED,
+	articleImage,
+	contact,
+	dateModified,
+	datePublished,
+	industries,
+	logo,
+	markets,
+	menu,
+	modifiedDate,
+	pageKeywords,
+	pageLang,
+	person,
+	services,
+	shareCard,
+	socials
+} from './site';
 export type Faq = { question: string; answer: string };
 export type Crumb = { name: string; path: string };
 export type Step = { name: string; text: string };
@@ -30,6 +48,10 @@ export const personNode = () => ({
 	alternateName: person.fullName,
 	url: person.homepage,
 	jobTitle: person.jobTitle,
+	description: person.description,
+	nationality: { '@type': 'Country', name: person.country },
+	// formação em andamento (2023–2026), como no calebearaujo.com.br: trocar para alumniOf ao concluir
+	affiliation: { '@type': 'CollegeOrUniversity', name: 'Fatec Itu' },
 	homeLocation: { '@type': 'City', name: person.city, containedInPlace: { '@type': 'Country', name: person.country } },
 	worksFor: [{ '@id': ORG_ID }, { '@type': 'Organization', ...person.employer }],
 	knowsLanguage: [
@@ -57,7 +79,7 @@ export const websiteNode = () => ({
 	name: BRAND,
 	alternateName: 'rankingfixer.com',
 	description: 'Technical SEO fixes implemented by a developer: audits, Core Web Vitals, indexing issues and website migrations.',
-	inLanguage: 'en-US',
+	inLanguage: 'en',
 	publisher: { '@id': ORG_ID },
 	creator: { '@id': person.id },
 	copyrightHolder: { '@id': ORG_ID },
@@ -72,20 +94,35 @@ export const logoNode = () => ({
 	width: logo.width,
 	height: logo.height,
 	encodingFormat: 'image/png',
-	caption: `${BRAND} logo`
+	caption: `${BRAND} logo`,
+	creditText: BRAND,
+	copyrightNotice: `© ${YEAR} ${BRAND}`
 });
 
 export const organizationNode = () => ({
 	'@type': 'Organization',
 	'@id': ORG_ID,
 	name: BRAND,
+	alternateName: 'rankingfixer.com',
 	url: `${SITE_URL}/`,
+	slogan: 'Technical SEO fixes, implemented by a developer',
 	logo: { '@id': LOGO_ID },
 	image: absolute(shareCard('/')),
 	description:
 		'Technical SEO consultancy run by a full-stack developer. Finds and fixes the technical problems that keep websites from ranking on Google.',
 	email: contact.email,
 	founder: { '@id': person.id },
+	foundingDate: '2026-10-25',
+	// consultoria de uma pessoa
+	numberOfEmployees: { '@type': 'QuantitativeValue', value: 1 },
+	// onde a operação está de fato: atendimento remoto, sem escritório nos países atendidos
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: person.city,
+		addressRegion: person.region,
+		addressCountry: person.countryCode
+	},
+	knowsLanguage: ['English', 'Portuguese'],
 	areaServed,
 	knowsAbout: ['Technical SEO', 'Core Web Vitals', 'Google indexing', 'SEO website migration', 'Structured data'],
 	contactPoint: {
@@ -132,7 +169,9 @@ export const imageNode = (path: string, caption: string) => ({
 	caption,
 	representativeOfPage: true,
 	creator: { '@id': ORG_ID },
-	copyrightHolder: { '@id': ORG_ID }
+	creditText: BRAND,
+	copyrightHolder: { '@id': ORG_ID },
+	copyrightNotice: `© ${YEAR} ${BRAND}`
 });
 
 export const webPageNode = (opts: {
@@ -150,14 +189,17 @@ export const webPageNode = (opts: {
 		url,
 		name: opts.title,
 		description: opts.description,
-		inLanguage: 'en-US',
+		inLanguage: pageLang(opts.path),
 		isPartOf: { '@id': WEBSITE_ID },
 		author: { '@id': person.id },
 		publisher: { '@id': ORG_ID },
 		copyrightHolder: { '@id': ORG_ID },
 		copyrightYear: YEAR,
 		datePublished: datePublished(opts.path),
-		dateModified,
+		dateModified: dateModified(opts.path),
+		// conteúdo revisado pelo autor na data da última alteração
+		lastReviewed: modifiedDate(opts.path),
+		reviewedBy: { '@id': person.id },
 		primaryImageOfPage: { '@id': imageId(opts.path) },
 		image: { '@id': imageId(opts.path) },
 		thumbnailUrl: absolute(shareCard(opts.path)),
@@ -196,6 +238,7 @@ export const serviceNode = (opts: {
 	description: opts.description,
 	url: absolute(opts.path),
 	provider: { '@id': ORG_ID },
+	brand: { '@id': ORG_ID },
 	image: { '@id': imageId(opts.path) },
 	areaServed: opts.country ? { '@type': 'Country', name: opts.country } : areaServed,
 	availableChannel: { '@type': 'ServiceChannel', serviceUrl: absolute(opts.path), availableLanguage: 'English' },
@@ -205,6 +248,7 @@ export const serviceNode = (opts: {
 export const faqNode = (path: string, faqs: Faq[]) => ({
 	'@type': 'FAQPage',
 	'@id': `${absolute(path)}#faq`,
+	inLanguage: pageLang(path),
 	mainEntity: faqs.map((f) => ({
 		'@type': 'Question',
 		name: f.question,
@@ -216,20 +260,25 @@ export const howToNode = (path: string, name: string, steps: Step[]) => ({
 	'@type': 'HowTo',
 	'@id': `${absolute(path)}#howto`,
 	name,
-	inLanguage: 'en-US',
+	inLanguage: pageLang(path),
 	step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.name, text: s.text }))
 });
 
+// Guias: o Google recomenda imagens de artigo nas proporções 16:9, 4:3 e 1:1, além do card
 export const articleNode = (path: string, headline: string, description: string) => ({
 	'@type': 'TechArticle',
 	'@id': `${absolute(path)}#article`,
 	headline,
 	description,
-	inLanguage: 'en-US',
+	inLanguage: pageLang(path),
 	url: absolute(path),
 	mainEntityOfPage: { '@id': `${absolute(path)}#webpage` },
-	image: { '@id': imageId(path) },
+	image: [
+		{ '@id': imageId(path) },
+		...(['16x9', '4x3', '1x1'] as const).map((ratio) => absolute(articleImage(path, ratio)))
+	],
 	articleSection: 'Technical SEO guides',
+	proficiencyLevel: 'Beginner',
 	isAccessibleForFree: true,
 	...(pageKeywords[path] ? { keywords: pageKeywords[path].join(', ') } : {}),
 	author: { '@id': person.id },
@@ -237,7 +286,7 @@ export const articleNode = (path: string, headline: string, description: string)
 	copyrightHolder: { '@id': ORG_ID },
 	copyrightYear: YEAR,
 	datePublished: datePublished(path),
-	dateModified
+	dateModified: dateModified(path)
 });
 
 export const graph = (...nodes: object[]) => ({ '@context': 'https://schema.org', '@graph': nodes });
@@ -253,6 +302,8 @@ export const pageGraph = (opts: {
 	article?: { headline: string };
 	faqs?: Faq[];
 	howTo?: { name: string; steps: Step[] };
+	// entidade principal quando não é serviço, artigo ou organização (ex.: a lista de guias)
+	mainEntity?: string;
 	extra?: object[];
 }) => {
 	const main = opts.service
@@ -261,7 +312,9 @@ export const pageGraph = (opts: {
 			? `${absolute(opts.path)}#article`
 			: opts.type === 'AboutPage'
 				? ORG_ID
-				: undefined;
+				: opts.mainEntity;
+	// home fala da organização; "About" fala da organização e da pessoa por trás dela
+	const about = opts.path === '/' ? ORG_ID : opts.type === 'AboutPage' ? person.id : undefined;
 	return graph(
 		websiteNode(),
 		navNode(),
@@ -269,7 +322,7 @@ export const pageGraph = (opts: {
 		organizationNode(),
 		personNode(),
 		imageNode(opts.path, opts.title),
-		webPageNode({ path: opts.path, title: opts.title, description: opts.description, type: opts.type, mainEntity: main }),
+		webPageNode({ path: opts.path, title: opts.title, description: opts.description, type: opts.type, mainEntity: main, about }),
 		...(opts.path !== '/' ? [breadcrumbNode(opts.path, opts.crumbs)] : []),
 		...(opts.service ? [serviceNode({ path: opts.path, ...opts.service })] : []),
 		...(opts.article ? [articleNode(opts.path, opts.article.headline, opts.description)] : []),

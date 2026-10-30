@@ -1,0 +1,16 @@
+{
+	"name": "Ranking Fixer",
+	"short_name": "Ranking Fixer",
+	"description": "Technical SEO fixes implemented by a developer: audits, Core Web Vitals, indexing issues and website migrations.",
+	"start_url": "/",
+	"scope": "/",
+	"display": "browser",
+	"lang": "en",
+	"background_color": "#0b1220",
+	"theme_color": "#0b1220",
+	"icons": [
+		{ "src": "/images/logo-192.png", "sizes": "192x192", "type": "image/png" },
+		{ "src": "/images/logo-512.png", "sizes": "512x512", "type": "image/png" },
+		{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+	]
+}

@@ -183,18 +183,20 @@
 	</section>
 
 	<section aria-labelledby="markets-title">
-		<h2 id="markets-title">Law firm SEO in New York, Los Angeles, Houston and Toronto</h2>
+		<h2 id="markets-title">Law firm SEO in New York, Los Angeles, Houston, Toronto and London</h2>
 		<p>
 			The biggest legal markets are where technical problems cost the most: personal injury, family and
 			immigration searches in these cities are fought between firms with similar content, reviews and
 			budgets. A slow mobile page or a practice area that is not indexed hands the client to the next result.
 		</p>
 		<p>
-			I work remotely, so a firm in New York, Los Angeles, Houston or Toronto gets the same audit and the
-			same fixes. What changes is the competition and the advertising rules: in Ontario, for example, the
-			Law Society limits who can be described as a specialist, and the markup must follow the same rule as
-			the page. Canadian firms with French pages will find the bilingual setup covered on the
-			<a href={markets.canada.path}>technical SEO in Canada</a> page.
+			I work remotely, so a firm in New York, Los Angeles, Houston, Toronto or London gets the same audit
+			and the same fixes. What changes is the competition and the advertising rules: in Ontario, for
+			example, the Law Society limits who can be described as a specialist, and the markup must follow the
+			same rule as the page. Canadian firms with French pages will find the bilingual setup covered on the
+			<a href={markets.canada.path}>technical SEO in Canada</a> page, and solicitors in England and Wales
+			the SRA badge and price information requirements on the
+			<a href={markets.uk.path}>technical SEO in the UK</a> page.
 		</p>
 	</section>
 

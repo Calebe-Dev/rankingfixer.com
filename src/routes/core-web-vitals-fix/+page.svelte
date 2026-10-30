@@ -157,13 +157,14 @@
 	</section>
 
 	<section class="band" aria-labelledby="proof-title">
-		<h2 id="proof-title">Speed work I can show</h2>
-		<ul class="proof">
-			<li><strong>8 s → 1 s</strong> load time after migrating legacy systems to Angular and Svelte</li>
+		<h2 id="proof-title">The performance work behind the service</h2>
+		<ul class="checks">
+			<li><strong>Legacy systems rebuilt</strong> on Angular and Svelte, with much faster loading as the goal from the start.</li>
+			<li><strong>Images, caching and CDNs</strong> configured on Cloudflare and AWS for sites in production.</li>
 			<li>
-				<strong>100/100</strong> Lighthouse performance on <a href={person.homepage}>calebearaujo.com.br</a>, mobile and desktop
+				<strong>This site as a test case:</strong> no JavaScript of its own, every page prerendered as HTML and CSS.
+				Run it through PageSpeed Insights, or check <a href={person.homepage}>calebearaujo.com.br</a>, built the same way.
 			</li>
-			<li><strong>0 KB</strong> of its own JavaScript on this site: pages are prerendered HTML and CSS</li>
 		</ul>
 	</section>
 

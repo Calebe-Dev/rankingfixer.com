@@ -164,6 +164,7 @@
 			{ href: services.audit.path, text: 'Technical SEO audit' },
 			{ href: services.coreWebVitals.path, text: 'Speed up a slow NZ website' },
 			{ href: services.indexing.path, text: 'Pages not indexed by Google' },
+			{ href: markets.uk.path, text: 'Technical SEO in the UK' },
 			{ href: markets.canada.path, text: 'Technical SEO in Canada' }
 		]}
 	/>

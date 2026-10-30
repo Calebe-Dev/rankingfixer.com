@@ -23,6 +23,7 @@ const label = (slug) => {
 	if (slug.startsWith('guides-')) return 'Technical SEO guide';
 	if (slug === 'about') return 'About';
 	if (['white-label-technical-seo', 'technical-seo-for-law-firms', 'ecommerce-technical-seo'].includes(slug)) return 'Who it is for';
+	if (slug === 'technical-seo-uk') return 'Remote, for UK businesses';
 	if (slug === 'technical-seo-canada') return 'Remote, for Canadian businesses';
 	if (slug === 'technical-seo-new-zealand') return 'Remote, for New Zealand businesses';
 	return 'Service';
@@ -56,6 +57,8 @@ for (const file of pages(BUILD)) {
 		.foot{margin-top:28px;color:#a9b5cc;font-size:24px;font-weight:600}
 		.foot b{color:#fff}
 		.bar{position:absolute;left:0;right:0;bottom:0;height:10px;background:linear-gradient(90deg,#ff4e42,#e67700,#12c26b)}
+		/* versões 4:3 e 1:1 dos guias: medidor no alto e título maior, sem vazio no meio */
+		@media (max-aspect-ratio: 3/2){.gauge{top:150px;transform:none;width:380px;height:380px}h1{font-size:${Math.round(size * 1.18)}px}.content{width:900px}}
 	</style></head><body>
 		<div class="light"></div><div class="grid"></div>
 		<svg class="gauge" viewBox="0 0 120 120" fill="none">
@@ -71,11 +74,17 @@ for (const file of pages(BUILD)) {
 		</div>
 		<div class="bar"></div>
 	</body></html>`;
-	const htmlFile = path.join(TMP, `${slug}.html`);
-	const png = path.join(TMP, `${slug}.png`);
-	fs.writeFileSync(htmlFile, card);
-	execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1', '--allow-file-access-from-files',
-		'--window-size=1200,630', `--user-data-dir=${path.join(TMP, 'profile')}`, `--screenshot=${png}`, `file://${htmlFile}`], { stdio: 'ignore' });
-	execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', png, '-q:v', '3', path.join(OUT, `${slug}.jpg`)]);
-	console.log(`${slug}.jpg  ${Math.round(fs.statSync(path.join(OUT, `${slug}.jpg`)).size / 1024)} KB  "${h1}"`);
+	// card padrão (1200×630) e, nos guias, as proporções que o Google recomenda para artigos
+	const sizes = [['', 1200, 630]];
+	if (slug.startsWith('guides-')) sizes.push(['-16x9', 1200, 675], ['-4x3', 1200, 900], ['-1x1', 1200, 1200]);
+	for (const [suffix, w, h] of sizes) {
+		const name = `${slug}${suffix}`;
+		const htmlFile = path.join(TMP, `${name}.html`);
+		const png = path.join(TMP, `${name}.png`);
+		fs.writeFileSync(htmlFile, card.replace('width:1200px;height:630px', `width:${w}px;height:${h}px`));
+		execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1', '--allow-file-access-from-files',
+			`--window-size=${w},${h}`, `--user-data-dir=${path.join(TMP, 'profile')}`, `--screenshot=${png}`, `file://${htmlFile}`], { stdio: 'ignore' });
+		execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', png, '-q:v', '3', path.join(OUT, `${name}.jpg`)]);
+		console.log(`${name}.jpg  ${w}×${h}  ${Math.round(fs.statSync(path.join(OUT, `${name}.jpg`)).size / 1024)} KB  "${h1}"`);
+	}
 }

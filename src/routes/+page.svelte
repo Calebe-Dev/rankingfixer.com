@@ -88,8 +88,8 @@
 			The diagnosis and the fix come from the same person.
 		</p>
 		<p>
-			I am {person.name}, a full-stack developer and tech lead. I write production code every day, so the
-			fixes I recommend are the fixes I can ship.
+			I am {person.name}, a full-stack developer and tech lead who has been building websites for more
+			than ten years. I write production code every day, so the fixes I recommend are the fixes I can ship.
 		</p>
 		<div class="cta-row">
 			<EmailCta {...email} />
@@ -182,6 +182,11 @@
 				<p>Faceted navigation, product variants, unindexed collections and platform migrations.</p>
 			</li>
 			<li>
+				<span class="tag">United Kingdom</span>
+				<h3><a href={markets.uk.path}>{markets.uk.name}</a></h3>
+				<p>Cookie banners that slow pages, UK and Ireland versions, VAT in product data, the British afternoon.</p>
+			</li>
+			<li>
 				<span class="tag">Canada</span>
 				<h3><a href={markets.canada.path}>{markets.canada.name}</a></h3>
 				<p>Bilingual English and French sites, Canada and US targeting, Eastern time working hours.</p>
@@ -195,14 +200,27 @@
 	</section>
 
 	<section class="band" aria-labelledby="proof-title">
-		<h2 id="proof-title">Results you can check</h2>
-		<p>No invented case studies. These are numbers from my own work, and the last one you can test right now.</p>
-		<ul class="proof">
-			<li><strong>8 s → 1 s</strong> page load after migrating legacy systems to Angular and Svelte</li>
-			<li><strong>25 sites</strong> integrated in a microservices CRM I designed and built</li>
-			<li><strong>60+</strong> landing pages and business websites shipped with technical SEO</li>
+		<h2 id="proof-title">The experience behind the fixes</h2>
+		<p>
+			Ranking Fixer is run by a developer who has built websites since 2015, first as a freelancer and today
+			as a tech lead maintaining production platforms, not by a marketing team that outsources the code.
+		</p>
+		<ul class="cards">
 			<li>
-				<strong>100/100</strong> Lighthouse scores on <a href={person.homepage}>calebearaujo.com.br</a>, mobile and desktop
+				<h3>CMS integrations across many sites</h3>
+				<p>Headless CMS platforms and APIs that publish content to many websites at once, with the structure Google needs.</p>
+			</li>
+			<li>
+				<h3>Performance optimization</h3>
+				<p>Legacy systems rebuilt on modern frameworks, with images, scripts and servers tuned until pages load fast on phones.</p>
+			</li>
+			<li>
+				<h3>Technical leadership</h3>
+				<p>Coordinating an IT team through architecture, code review and releases, so fixes ship safely in real codebases.</p>
+			</li>
+			<li>
+				<h3>Technical SEO built in</h3>
+				<p>Indexing, structured data and Core Web Vitals planned from the first template, not patched in at the end.</p>
 			</li>
 		</ul>
 		<p>

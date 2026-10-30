@@ -1,4 +1,4 @@
-import { SITE_URL, UPDATED } from '$lib/site';
+import { SITE_URL, modifiedDate } from '$lib/site';
 
 export const prerender = true;
 
@@ -12,7 +12,8 @@ export function GET() {
 	const urls = paths
 		.map((path) => {
 			const loc = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
-			return `\t<url>\n\t\t<loc>${loc}</loc>\n\t\t<lastmod>${UPDATED}</lastmod>\n\t</url>`;
+			// lastmod = última mudança de conteúdo da própria página (a mesma do dateModified do schema)
+			return `\t<url>\n\t\t<loc>${loc}</loc>\n\t\t<lastmod>${modifiedDate(path)}</lastmod>\n\t</url>`;
 		})
 		.join('\n');
 

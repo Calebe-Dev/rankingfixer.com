@@ -37,6 +37,7 @@
 		description,
 		crumbs,
 		type: 'CollectionPage',
+		mainEntity: `${absolute(path)}#list`,
 		extra: [
 			{
 				'@type': 'ItemList',

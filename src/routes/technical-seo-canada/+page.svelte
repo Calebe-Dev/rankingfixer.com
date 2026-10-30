@@ -168,6 +168,7 @@
 			{ href: services.audit.path, text: 'What the technical SEO audit covers' },
 			{ href: services.migration.path, text: 'Migrations and domain changes' },
 			{ href: services.coreWebVitals.path, text: 'Core Web Vitals optimization' },
+			{ href: markets.uk.path, text: 'Technical SEO in the UK' },
 			{ href: markets.newZealand.path, text: 'Technical SEO in New Zealand' }
 		]}
 	/>

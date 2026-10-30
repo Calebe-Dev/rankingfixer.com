@@ -133,9 +133,9 @@
 	<section class="band" aria-labelledby="dev-title">
 		<h2 id="dev-title">Migration experience</h2>
 		<p>
-			As a full-stack developer and tech lead, I have migrated legacy systems to Angular and Svelte, with
-			page load time falling from 8 seconds to 1, and built a microservices CRM that integrates 25 sites.
-			Redirect rules on servers, CDNs and Cloudflare are everyday work, not a ticket for someone else.
+			As a full-stack developer and tech lead, I have led migrations of legacy systems to modern frameworks
+			and built CMS integrations that publish to many websites from one platform. Redirect rules on
+			servers, CDNs and Cloudflare are everyday work, not a ticket for someone else.
 			More on the <a href={person.homepage}>work behind Ranking Fixer</a>.
 		</p>
 	</section>

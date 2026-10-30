@@ -36,11 +36,13 @@
 	<section aria-labelledby="who-title">
 		<h2 id="who-title">Who does the work</h2>
 		<p>
-			I am a full-stack developer and tech lead based in {person.city}, {person.country}. At Grupo OC, I
-			coordinate the IT team and designed and built a proprietary CRM in microservices that integrates 25
-			websites. Migrating legacy systems there to Angular and Svelte cut page load time from 8 seconds to
-			1. Before that, I built more than 60 landing pages and business websites with technical SEO and
-			conversion tracking at a marketing agency.
+			I have been building websites since 2015. I started as a freelancer after a web design course in the
+			days of Adobe Flash and early versions of Dreamweaver, when web developers were still called
+			webmasters. Today I am a full-stack developer and tech lead based in {person.city}, {person.country},
+			specialized in CMS integrations for multiple projects and in web performance optimization. At Grupo OC, I coordinate the
+			IT team and lead the platform that connects the group's websites to a central headless CMS, including
+			the migration of legacy systems to modern frameworks. Before that, I built landing pages and business
+			websites with technical SEO and conversion tracking at a marketing agency.
 		</p>
 		<p>
 			I work with Angular, Svelte, TypeScript, Node.js, Java, PostgreSQL, Docker, AWS and Cloudflare,

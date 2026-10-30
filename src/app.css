@@ -761,36 +761,6 @@ main > section .button {
 	box-shadow: var(--shadow);
 }
 
-/* números e provas */
-.proof {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-	gap: 16px;
-	max-width: none !important;
-	margin: 1.2em 0 0;
-	padding: 0;
-	list-style: none;
-}
-
-.proof li {
-	padding: 20px;
-	border-radius: var(--radius);
-	background: var(--ink);
-	color: var(--on-dark-muted);
-}
-
-.proof a {
-	color: #7ee2a8;
-}
-
-.proof strong {
-	display: block;
-	color: var(--green);
-	font-size: 1.9rem;
-	line-height: 1.1;
-	letter-spacing: -0.02em;
-}
-
 /* ---------- tabelas ---------- */
 
 .table-wrap {
