@@ -12,11 +12,27 @@ export const BRAND = 'Ranking Fixer';
 const TIME = 'T09:00:00-03:00';
 const LAUNCH = '2026-10-25';
 // 26/10/2026: dados estruturados ampliados e Reino Unido no menu de todas as páginas
-const SITEWIDE = '2026-10-26';
+// 29/10/2026: cinco guias novos no menu e no rodapé de todas as páginas
+const SITEWIDE = '2026-10-29';
 const publishedOn: Record<string, string> = {
-	'/technical-seo-uk': '2026-10-26'
+	'/technical-seo-uk': '2026-10-26',
+	'/guides/discovered-currently-not-indexed': '2026-10-29',
+	'/guides/duplicate-without-user-selected-canonical': '2026-10-29',
+	'/guides/soft-404': '2026-10-29',
+	'/guides/sitemap-could-not-be-read': '2026-10-29',
+	'/guides/website-disappeared-from-google': '2026-10-29'
 };
-const modifiedOn: Record<string, string> = {};
+// 29/10/2026: title e H1 da home com "technical SEO consultant"; seção de WordPress no guia de Core
+// Web Vitals; links para os guias novos nas páginas do cluster de indexação e de migração
+const modifiedOn: Record<string, string> = {
+	'/': '2026-10-29',
+	'/guides': '2026-10-29',
+	'/guides/core-web-vitals-assessment-failed': '2026-10-29',
+	'/guides/crawled-currently-not-indexed': '2026-10-29',
+	'/guides/website-not-showing-on-google': '2026-10-29',
+	'/google-indexing-issues': '2026-10-29',
+	'/seo-website-migration': '2026-10-29'
+};
 const latest = (...dates: (string | undefined)[]) => dates.filter(Boolean).sort().at(-1) as string;
 export const publishedDate = (path: string) => publishedOn[path] ?? LAUNCH;
 export const modifiedDate = (path: string) => latest(publishedDate(path), SITEWIDE, modifiedOn[path]);
@@ -107,7 +123,15 @@ export const pageLang = (path: string): string => Object.values(markets).find((m
 export const guidesPage = { path: '/guides', name: 'Guides' };
 export const guides = {
 	notShowing: { path: '/guides/website-not-showing-on-google', name: 'Website not showing on Google' },
+	disappeared: { path: '/guides/website-disappeared-from-google', name: 'Website disappeared from Google' },
 	crawledNotIndexed: { path: '/guides/crawled-currently-not-indexed', name: 'Crawled - currently not indexed' },
+	discoveredNotIndexed: { path: '/guides/discovered-currently-not-indexed', name: 'Discovered - currently not indexed' },
+	duplicateCanonical: {
+		path: '/guides/duplicate-without-user-selected-canonical',
+		name: 'Duplicate without user-selected canonical'
+	},
+	soft404: { path: '/guides/soft-404', name: 'Soft 404 errors' },
+	sitemapNotRead: { path: '/guides/sitemap-could-not-be-read', name: 'Sitemap could not be read' },
 	cwvFailed: { path: '/guides/core-web-vitals-assessment-failed', name: 'Core Web Vitals assessment failed' }
 } as const;
 
@@ -201,7 +225,6 @@ export const pageKeywords: Record<string, string[]> = {
 		'why is google not indexing my site',
 		'google search console indexing issues',
 		'page with redirect google search console',
-		'duplicate without user-selected canonical',
 		'excluded by noindex tag',
 		'how long does google indexing take'
 	],
@@ -298,11 +321,58 @@ export const pageKeywords: Record<string, string[]> = {
 		'wix website not showing on google',
 		'squarespace website not showing on google'
 	],
+	'/guides/website-disappeared-from-google': [
+		'website disappeared from google',
+		'why is my website not showing up on google anymore',
+		'google deindexed my site',
+		'website removed from google search',
+		'site dropped out of google',
+		'google manual action',
+		'japanese keyword hack',
+		'hacked site google search'
+	],
+	'/guides/discovered-currently-not-indexed': [
+		'discovered - currently not indexed',
+		'discovered currently not indexed',
+		'how to fix discovered currently not indexed',
+		'page is not indexed: discovered - currently not indexed',
+		'discovered not indexed',
+		'discovered currently not indexed wix',
+		'discovered currently not indexed squarespace',
+		'how long does discovered currently not indexed last'
+	],
+	'/guides/duplicate-without-user-selected-canonical': [
+		'duplicate without user-selected canonical',
+		'duplicate without user-selected canonical how to fix',
+		'duplicate, google chose different canonical than user',
+		'google chose different canonical than user',
+		'canonical issues',
+		'user-declared canonical vs google-selected canonical',
+		'canonical tag vs 301 redirect'
+	],
+	'/guides/soft-404': [
+		'soft 404',
+		'what is a soft 404',
+		'soft 404 fix',
+		'soft 404 google search console',
+		'soft 404 vs 404',
+		'soft 404 single page app',
+		'redirect 404 to homepage',
+		'out of stock product page seo'
+	],
+	'/guides/sitemap-could-not-be-read': [
+		'sitemap could not be read',
+		"couldn't fetch sitemap",
+		'sitemap could not be read google search console',
+		'sitemap couldnt fetch google search console',
+		'sitemap has errors',
+		'sitemap index file',
+		'sitemap size limit'
+	],
 	'/guides/crawled-currently-not-indexed': [
 		'crawled - currently not indexed',
 		'how to fix crawled currently not indexed',
 		'crawled but not indexed',
-		'discovered - currently not indexed',
 		'crawled currently not indexed vs discovered currently not indexed',
 		'crawled currently not indexed validation failed',
 		'what does crawled currently not indexed mean'

@@ -30,6 +30,15 @@
 		['Blocked due to access forbidden (403)', 'The server refused Googlebot', 'Allow Googlebot in the firewall, CDN or security plugin']
 	];
 
+	// Status com guia próprio: a linha da tabela leva ao guia (hub → spoke)
+	const guideFor: Record<string, string> = {
+		'Crawled - currently not indexed': guides.crawledNotIndexed.path,
+		'Discovered - currently not indexed': guides.discoveredNotIndexed.path,
+		'Duplicate without user-selected canonical': guides.duplicateCanonical.path,
+		'Duplicate, Google chose different canonical than user': guides.duplicateCanonical.path,
+		'Soft 404': guides.soft404.path
+	};
+
 	const faqs: FaqItem[] = [
 		{
 			question: 'How long does Google take to index a new website?',
@@ -110,7 +119,9 @@
 				<tbody>
 					{#each statuses as [status, meaning, fix] (status)}
 						<tr>
-							<th scope="row">{status}</th>
+							<th scope="row">
+								{#if guideFor[status]}<a href={guideFor[status]}>{status}</a>{:else}{status}{/if}
+							</th>
 							<td>{meaning}</td>
 							<td>{fix}</td>
 						</tr>
@@ -159,8 +170,9 @@
 			<li><strong>Validate.</strong> Start validation in Search Console and track indexed pages over the following weeks.</li>
 		</ol>
 		<p>
-			The most common status has its own guide:
-			<a href={guides.crawledNotIndexed.path}>how to fix "Crawled - currently not indexed"</a>.
+			The statuses linked in the table have their own guides, starting with the most common one:
+			<a href={guides.crawledNotIndexed.path}>how to fix "Crawled - currently not indexed"</a>. When the
+			sitemap itself fails, see <a href={guides.sitemapNotRead.path}>"Sitemap could not be read"</a>.
 		</p>
 	</section>
 
@@ -169,7 +181,9 @@
 	<Related
 		links={[
 			{ href: guides.crawledNotIndexed.path, text: 'Crawled - currently not indexed: the fix' },
+			{ href: guides.discoveredNotIndexed.path, text: 'Discovered - currently not indexed: the fix' },
 			{ href: guides.notShowing.path, text: 'Why a website is not showing on Google' },
+			{ href: guides.disappeared.path, text: 'A website that disappeared from Google' },
 			{ href: services.audit.path, text: 'Technical SEO audit' },
 			{ href: industries.ecommerce.path, text: 'Unindexed product and collection pages' }
 		]}

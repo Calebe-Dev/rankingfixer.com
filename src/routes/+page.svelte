@@ -7,7 +7,7 @@
 	import { aboutPage, guides, guidesPage, industries, markets, person, services, type Email } from '$lib/site';
 
 	const path = '/';
-	const title = 'Technical SEO Fixes Done by a Developer | Ranking Fixer';
+	const title = 'Technical SEO Consultant Who Fixes the Code | Ranking Fixer';
 	const description =
 		'Technical SEO consultant and developer who finds and fixes what keeps your site off Google: indexing, Core Web Vitals and migrations.';
 	const email: Email = { subject: 'Website fix request (from the home page)', label: 'Email me your site' };
@@ -80,8 +80,8 @@
 
 <main id="content">
 	<header class="hero with-gauge">
-		<p class="eyebrow">Technical SEO consultant and developer</p>
-		<h1>Technical SEO fixes for sites that should be <em>ranking</em></h1>
+		<p class="eyebrow">Technical SEO audits and fixes, in the code</p>
+		<h1>Technical SEO consultant who fixes sites that should be <em>ranking</em></h1>
 		<p>
 			Ranking Fixer finds the technical problems that keep a website out of Google, like pages that are
 			not indexed, failing Core Web Vitals or a migration that broke redirects, and fixes them in the code.

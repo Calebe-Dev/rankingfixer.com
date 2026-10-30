@@ -8,7 +8,7 @@
 	const path = guidesPage.path;
 	const title = 'Technical SEO Guides | Ranking Fixer';
 	const description =
-		'Step-by-step technical SEO guides: websites not showing on Google, pages crawled but not indexed and failed Core Web Vitals assessments.';
+		'Technical SEO guides to Search Console problems: sites missing from Google, pages not indexed, canonicals, soft 404s, sitemaps and Core Web Vitals.';
 	const email: Email = { subject: 'Question from the guides', label: 'Ask about your site' };
 
 	const crumbs = [{ name: guidesPage.name, path }];
@@ -20,9 +20,34 @@
 			text: 'Eight checks in order, platform settings for WordPress, Wix, Squarespace and Shopify, and what to do when the site is indexed but not ranking.'
 		},
 		{
+			...guides.disappeared,
+			title: 'Website disappeared from Google? Causes and fixes',
+			text: 'For sites that used to rank: noindex, robots.txt, removals, manual actions, hacks and server problems, checked in the order that saves time.'
+		},
+		{
 			...guides.crawledNotIndexed,
 			title: 'Crawled - currently not indexed: how to fix it',
 			text: 'What the status means, how it differs from "Discovered - currently not indexed", and the steps that get pages indexed.'
+		},
+		{
+			...guides.discoveredNotIndexed,
+			title: 'Discovered - currently not indexed: how to fix it',
+			text: 'Why Google knows a URL but has not crawled it, how to read Crawl stats, and how to cut the crawl waste that keeps pages waiting.'
+		},
+		{
+			...guides.duplicateCanonical,
+			title: 'Duplicate without user-selected canonical: how to fix it',
+			text: 'The three canonical statuses compared, where duplicate URLs come from and how to make Google keep the right one.'
+		},
+		{
+			...guides.soft404,
+			title: 'Soft 404 errors in Search Console: how to fix them',
+			text: 'Pages that answer 200 but look missing, with fixes for templates, out-of-stock products and SvelteKit, Next.js and Angular apps.'
+		},
+		{
+			...guides.sitemapNotRead,
+			title: "Sitemap could not be read (couldn't fetch): how to fix it",
+			text: 'What the sitemap statuses mean, four commands to test the file, and the causes Google lists, from robots.txt to low crawl demand.'
 		},
 		{
 			...guides.cwvFailed,

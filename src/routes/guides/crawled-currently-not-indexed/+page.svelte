@@ -151,17 +151,17 @@
 	</section>
 
 	<section class="band" aria-labelledby="discovered-title">
-		<h2 id="discovered-title">How to fix "Discovered - currently not indexed"</h2>
+		<h2 id="discovered-title">When the status is "Discovered - currently not indexed"</h2>
 		<p>
-			Here Google has not even visited the pages. On large sites the cause is crawl waste: filters,
-			parameters and duplicate paths eat the visits Google is willing to make. Cut those URLs at the
-			source, link to the important pages from places Google already crawls, keep the sitemap clean and
-			make sure the server responds fast. On small sites, like new Wix or Squarespace sites, the cause is
-			usually that the site is new: internal links and a few links from other sites speed it up.
+			Here Google has not even visited the pages, so the fix is not in the page content. It is in crawl
+			waste, internal links and how fast the server answers, explained step by step in the guide to
+			<a href={guides.discoveredNotIndexed.path}>"Discovered - currently not indexed"</a>.
 		</p>
 		<p>
 			On online stores both statuses usually come from filters and variants, covered in
-			<a href={industries.ecommerce.path}>ecommerce technical SEO</a>.
+			<a href={industries.ecommerce.path}>ecommerce technical SEO</a>. When the copies are flagged as
+			duplicates instead, see <a href={guides.duplicateCanonical.path}>"Duplicate without user-selected
+			canonical"</a>.
 		</p>
 	</section>
 
@@ -170,6 +170,8 @@
 	<Related
 		links={[
 			{ href: services.indexing.path, text: 'Google indexing fixes' },
+			{ href: guides.discoveredNotIndexed.path, text: 'Discovered - currently not indexed' },
+			{ href: guides.soft404.path, text: 'Pages reported as soft 404' },
 			{ href: guides.notShowing.path, text: 'Website not showing up on Google' },
 			{ href: industries.lawFirms.path, text: 'Law firm office pages not indexed' },
 			{ href: services.audit.path, text: 'Technical SEO audit' }

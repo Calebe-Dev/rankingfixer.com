@@ -109,6 +109,25 @@ code {
 	overflow-wrap: anywhere;
 }
 
+/* blocos de código dos guias: rolagem horizontal no celular, sem quebrar a indentação */
+pre {
+	margin: 1em 0;
+	padding: 1em 1.2em;
+	background: var(--mist-2);
+	border-radius: 10px;
+	overflow-x: auto;
+	tab-size: 2;
+	line-height: 1.5;
+}
+
+pre code {
+	padding: 0;
+	background: none;
+	border-radius: 0;
+	overflow-wrap: normal;
+	white-space: pre;
+}
+
 strong {
 	color: var(--ink);
 }

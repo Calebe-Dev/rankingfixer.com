@@ -119,6 +119,20 @@
 	<section class="band" aria-labelledby="steps-title">
 		<h2 id="steps-title">How to fix a failed Core Web Vitals assessment</h2>
 		<Steps {steps} />
+
+		<h3>Core Web Vitals assessment failed on WordPress</h3>
+		<p>
+			On WordPress, a failed assessment usually comes from what the theme and plugins load on every page: a
+			page builder, sliders, several font families, chat and tracking scripts, and settings that lazy load
+			the hero image. The lasting fix is removing weight from the template, not adding one more optimization
+			plugin on top.
+		</p>
+		<ul class="checks">
+			<li><strong>Check the LCP image.</strong> Make sure the theme or an image plugin does not lazy load the first large image, and that it is served at the size it is displayed.</li>
+			<li><strong>Find plugins that load everywhere.</strong> Contact forms, sliders and social widgets often add scripts and styles to every page, even when they appear on one.</li>
+			<li><strong>Measure what the page builder costs.</strong> Compare the same content built with the block editor and with the builder on a test page.</li>
+			<li><strong>Cache full pages.</strong> A page cache at the host or a CDN cuts server response time, the first part of LCP.</li>
+		</ul>
 	</section>
 
 	<section aria-labelledby="lcp-title">

@@ -30,7 +30,12 @@ All countries are served remotely; Ranking Fixer has no local offices.
 
 - [All technical SEO guides](https://rankingfixer.com/guides)
 - [Why is my website not showing up on Google?](https://rankingfixer.com/guides/website-not-showing-on-google)
+- [Website disappeared from Google? Causes and fixes](https://rankingfixer.com/guides/website-disappeared-from-google): for sites that used to rank; noindex, robots.txt, removals, manual actions, hacks and server problems, in order.
 - [Crawled - currently not indexed: how to fix it](https://rankingfixer.com/guides/crawled-currently-not-indexed)
+- [Discovered - currently not indexed: how to fix it](https://rankingfixer.com/guides/discovered-currently-not-indexed): Google knows the URL but has not crawled it; crawl waste, internal links and server speed.
+- [Duplicate without user-selected canonical: how to fix it](https://rankingfixer.com/guides/duplicate-without-user-selected-canonical): the three canonical statuses compared and how to make Google keep the right URL.
+- [Soft 404 errors in Search Console: how to fix them](https://rankingfixer.com/guides/soft-404): pages that return 200 but look missing, with fixes for SvelteKit, Next.js and Angular.
+- [Sitemap could not be read (couldn't fetch): how to fix it](https://rankingfixer.com/guides/sitemap-could-not-be-read): sitemap statuses, how to test the file and the causes Google lists.
 - [Core Web Vitals assessment failed: how to fix it](https://rankingfixer.com/guides/core-web-vitals-assessment-failed)
 
 ## About

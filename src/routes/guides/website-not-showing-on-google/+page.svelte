@@ -139,8 +139,14 @@
 		<p>
 			These two statuses are the most common answer to "why is my page not on Google". Google either read
 			the page and chose not to keep it, or found the URL and has not visited it yet. Each has its own
-			fixes, explained in the guide to
-			<a href={guides.crawledNotIndexed.path}>"Crawled - currently not indexed"</a>.
+			fixes, explained in the guides to
+			<a href={guides.crawledNotIndexed.path}>"Crawled - currently not indexed"</a> and
+			<a href={guides.discoveredNotIndexed.path}>"Discovered - currently not indexed"</a>.
+		</p>
+		<p>
+			If the site used to rank and then vanished, the causes are different: a noindex or robots.txt rule
+			published by mistake, a removal request, a manual action or a hack. They are covered in
+			<a href={guides.disappeared.path}>website disappeared from Google</a>.
 		</p>
 	</section>
 
@@ -150,6 +156,8 @@
 		links={[
 			{ href: services.indexing.path, text: 'Have your indexing issues fixed' },
 			{ href: guides.crawledNotIndexed.path, text: 'Crawled - currently not indexed' },
+			{ href: guides.disappeared.path, text: 'Site was on Google and disappeared' },
+			{ href: guides.sitemapNotRead.path, text: 'Sitemap could not be read' },
 			{ href: services.migration.path, text: 'Site gone after a redesign or migration' },
 			{ href: services.audit.path, text: 'Technical SEO audit' }
 		]}

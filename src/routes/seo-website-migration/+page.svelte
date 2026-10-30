@@ -7,7 +7,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import Steps from '$lib/components/Steps.svelte';
 	import { pageGraph, type Faq as FaqItem, type Step } from '$lib/schema';
-	import { industries, person, services, type Email } from '$lib/site';
+	import { guides, industries, person, services, type Email } from '$lib/site';
 
 	const path = services.migration.path;
 	const title = 'SEO Website Migration and Traffic Drop Recovery | Ranking Fixer';
@@ -147,7 +147,9 @@
 			{ href: services.audit.path, text: 'Audit before a redesign' },
 			{ href: industries.ecommerce.path, text: 'Ecommerce platform migrations' },
 			{ href: industries.lawFirms.path, text: 'Law firm website redesigns' },
-			{ href: services.indexing.path, text: 'Fix pages lost from the index' }
+			{ href: services.indexing.path, text: 'Fix pages lost from the index' },
+			{ href: guides.disappeared.path, text: 'Website disappeared from Google: other causes' },
+			{ href: guides.duplicateCanonical.path, text: 'Duplicate URLs after a move to https or a new domain' }
 		]}
 	/>
 
