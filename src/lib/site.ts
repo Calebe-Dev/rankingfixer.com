@@ -13,14 +13,17 @@ const TIME = 'T09:00:00-03:00';
 const LAUNCH = '2026-10-25';
 // 26/10/2026: dados estruturados ampliados e Reino Unido no menu de todas as páginas
 // 29/10/2026: cinco guias novos no menu e no rodapé de todas as páginas
-const SITEWIDE = '2026-10-29';
+// 31/10/2026: guias de llms.txt e de alternate canonical no menu e no rodapé de todas as páginas
+const SITEWIDE = '2026-10-31';
 const publishedOn: Record<string, string> = {
 	'/technical-seo-uk': '2026-10-26',
 	'/guides/discovered-currently-not-indexed': '2026-10-29',
 	'/guides/duplicate-without-user-selected-canonical': '2026-10-29',
 	'/guides/soft-404': '2026-10-29',
 	'/guides/sitemap-could-not-be-read': '2026-10-29',
-	'/guides/website-disappeared-from-google': '2026-10-29'
+	'/guides/website-disappeared-from-google': '2026-10-29',
+	'/guides/llms-txt': '2026-10-31',
+	'/guides/alternate-page-with-proper-canonical-tag': '2026-10-31'
 };
 // 29/10/2026: title e H1 da home com "technical SEO consultant"; seção de WordPress no guia de Core
 // Web Vitals; links para os guias novos nas páginas do cluster de indexação e de migração
@@ -132,7 +135,9 @@ export const guides = {
 	},
 	soft404: { path: '/guides/soft-404', name: 'Soft 404 errors' },
 	sitemapNotRead: { path: '/guides/sitemap-could-not-be-read', name: 'Sitemap could not be read' },
-	cwvFailed: { path: '/guides/core-web-vitals-assessment-failed', name: 'Core Web Vitals assessment failed' }
+	cwvFailed: { path: '/guides/core-web-vitals-assessment-failed', name: 'Core Web Vitals assessment failed' },
+	alternateCanonical: { path: '/guides/alternate-page-with-proper-canonical-tag', name: 'Alternate page with proper canonical tag' },
+	llmsTxt: { path: '/guides/llms-txt', name: 'llms.txt' }
 } as const;
 
 export const aboutPage = { path: '/about', name: 'About' };
@@ -349,6 +354,22 @@ export const pageKeywords: Record<string, string[]> = {
 		'canonical issues',
 		'user-declared canonical vs google-selected canonical',
 		'canonical tag vs 301 redirect'
+	],
+	'/guides/alternate-page-with-proper-canonical-tag': [
+		'alternate page with proper canonical tag',
+		'alternate page with proper canonical tag fix',
+		'alternate page with proper canonical tag meaning',
+		'alternate page with proper canonical tag shopify',
+		'canonical tag pointing to homepage',
+		'pagination canonical'
+	],
+	'/guides/llms-txt': [
+		'llms txt',
+		'llms.txt',
+		'what is llms.txt',
+		'llms.txt seo',
+		'llms-full.txt',
+		'llms.txt vs robots.txt'
 	],
 	'/guides/soft-404': [
 		'soft 404',

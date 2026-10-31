@@ -37,6 +37,8 @@ All countries are served remotely; Ranking Fixer has no local offices.
 - [Soft 404 errors in Search Console: how to fix them](https://rankingfixer.com/guides/soft-404): pages that return 200 but look missing, with fixes for SvelteKit, Next.js and Angular.
 - [Sitemap could not be read (couldn't fetch): how to fix it](https://rankingfixer.com/guides/sitemap-could-not-be-read): sitemap statuses, how to test the file and the causes Google lists.
 - [Core Web Vitals assessment failed: how to fix it](https://rankingfixer.com/guides/core-web-vitals-assessment-failed)
+- [Alternate page with proper canonical tag: when it's fine and when it isn't](https://rankingfixer.com/guides/alternate-page-with-proper-canonical-tag): which URLs are normal in the report and when the status hides a template bug.
+- [llms.txt: what it is, who reads it, and whether you need one](https://rankingfixer.com/guides/llms-txt): the format, how it differs from robots.txt and what to fix first.
 
 ## About
 

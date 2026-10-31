@@ -135,6 +135,10 @@
 			</table>
 		</div>
 		<p>
+			The third one usually needs no action; when it does, the guide to
+			<a href={guides.alternateCanonical.path}>"Alternate page with proper canonical tag"</a> shows how to tell.
+		</p>
+		<p>
 			Google's documentation describes the first status as a page that "is a duplicate of another page,
 			although it doesn't indicate a preferred canonical page. Google has chosen the other page as the
 			canonical for this page, and so will not serve this page in Search."
@@ -226,6 +230,7 @@
 		links={[
 			{ href: services.indexing.path, text: 'Google indexing fixes' },
 			{ href: guides.discoveredNotIndexed.path, text: 'Discovered - currently not indexed' },
+			{ href: guides.alternateCanonical.path, text: 'Alternate page with proper canonical tag' },
 			{ href: guides.soft404.path, text: 'Soft 404 errors' },
 			{ href: industries.ecommerce.path, text: 'Filters and variants on online stores' },
 			{ href: services.migration.path, text: 'Canonicals and redirects in a migration' }

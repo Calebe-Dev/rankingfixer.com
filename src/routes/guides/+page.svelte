@@ -8,7 +8,7 @@
 	const path = guidesPage.path;
 	const title = 'Technical SEO Guides | Ranking Fixer';
 	const description =
-		'Technical SEO guides to Search Console problems: sites missing from Google, pages not indexed, canonicals, soft 404s, sitemaps and Core Web Vitals.';
+		'Technical SEO guides to Search Console problems: sites missing from Google, pages not indexed, canonicals, soft 404s, sitemaps, Core Web Vitals and llms.txt.';
 	const email: Email = { subject: 'Question from the guides', label: 'Ask about your site' };
 
 	const crumbs = [{ name: guidesPage.name, path }];
@@ -53,6 +53,16 @@
 			...guides.cwvFailed,
 			title: 'Core Web Vitals assessment failed: how to fix it',
 			text: 'Every LCP, INP and CLS message in Search Console, what causes it and how to fix it on the template.'
+		},
+		{
+			...guides.alternateCanonical,
+			title: "Alternate page with proper canonical tag: when it's fine and when it isn't",
+			text: 'Which URLs are normal in the report, when the status hides a template bug, and how to fix a wrong canonical.'
+		},
+		{
+			...guides.llmsTxt,
+			title: 'llms.txt: what it is, who reads it, and whether you need one',
+			text: 'The format, how it differs from robots.txt and sitemaps, who actually reads it and what to fix before adding one.'
 		}
 	];
 
