@@ -14,7 +14,8 @@ const LAUNCH = '2026-10-25';
 // 26/10/2026: dados estruturados ampliados e Reino Unido no menu de todas as páginas
 // 29/10/2026: cinco guias novos no menu e no rodapé de todas as páginas
 // 31/10/2026: guias de llms.txt e de alternate canonical no menu e no rodapé de todas as páginas
-// 09/11/2026: cinco guias novos (pautados pelas consultas do Search Console) no menu e no rodapé
+// 09/11/2026: cinco guias novos (pautados pelas consultas do Search Console) no menu e no rodapé, e
+// depois três de presença no Google e marca (pautados pelo Keyword Planner, EUA, inglês)
 const SITEWIDE = '2026-11-09';
 const publishedOn: Record<string, string> = {
 	'/technical-seo-uk': '2026-10-26',
@@ -29,12 +30,16 @@ const publishedOn: Record<string, string> = {
 	'/guides/url-is-not-on-google': '2026-11-09',
 	'/guides/blocked-by-robots-txt': '2026-11-09',
 	'/guides/excluded-by-noindex-tag': '2026-11-09',
-	'/guides/keyword-cannibalization': '2026-11-09'
+	'/guides/keyword-cannibalization': '2026-11-09',
+	'/guides/how-to-get-your-website-on-google': '2026-11-09',
+	'/guides/branded-search': '2026-11-09',
+	'/guides/google-knowledge-panel': '2026-11-09'
 };
 // 29/10/2026: title e H1 da home com "technical SEO consultant"; seção de WordPress no guia de Core
 // Web Vitals; links para os guias novos nas páginas do cluster de indexação e de migração
 // 09/11/2026: links para os guias novos na tabela de status do hub de indexação, na auditoria (sites
-// JavaScript), no guia de soft 404 e no de site fora do Google
+// JavaScript), no guia de soft 404 e no de site fora do Google; seção "business not showing up" no guia
+// de site fora do Google
 const modifiedOn: Record<string, string> = {
 	'/': '2026-10-29',
 	'/guides': '2026-11-09',
@@ -135,6 +140,7 @@ export const pageLang = (path: string): string => Object.values(markets).find((m
 
 export const guidesPage = { path: '/guides', name: 'Guides' };
 export const guides = {
+	getOnGoogle: { path: '/guides/how-to-get-your-website-on-google', name: 'Get your website on Google' },
 	notShowing: { path: '/guides/website-not-showing-on-google', name: 'Website not showing on Google' },
 	disappeared: { path: '/guides/website-disappeared-from-google', name: 'Website disappeared from Google' },
 	crawledNotIndexed: { path: '/guides/crawled-currently-not-indexed', name: 'Crawled - currently not indexed' },
@@ -152,6 +158,8 @@ export const guides = {
 	urlNotOnGoogle: { path: '/guides/url-is-not-on-google', name: 'URL is not on Google' },
 	vibeCoded: { path: '/guides/vibe-coded-website-not-indexed', name: 'Vibe-coded site not indexed' },
 	cannibalization: { path: '/guides/keyword-cannibalization', name: 'Keyword cannibalization' },
+	brandedSearch: { path: '/guides/branded-search', name: 'Branded search results' },
+	knowledgePanel: { path: '/guides/google-knowledge-panel', name: 'Google knowledge panel' },
 	llmsTxt: { path: '/guides/llms-txt', name: 'llms.txt' }
 } as const;
 
@@ -331,11 +339,13 @@ export const pageKeywords: Record<string, string[]> = {
 	'/guides': ['technical seo guides', 'technical seo tutorial', 'google search console errors'],
 	'/guides/website-not-showing-on-google': [
 		'why is my website not showing up on google',
+		"why isn't my website showing up on google",
 		'website not showing on google',
 		'my website is not showing on google search',
 		'new website not showing on google',
 		'how long does it take for a website to show up on google',
 		'business not showing on google search',
+		'why is my business not showing up on google',
 		'website not showing on google search but is on maps',
 		'wix website not showing on google',
 		'squarespace website not showing on google'
@@ -421,6 +431,33 @@ export const pageKeywords: Record<string, string[]> = {
 		'cls issue more than 0.1',
 		'core web vitals assessment failed wordpress',
 		'core web vitals no data'
+	],
+	'/guides/how-to-get-your-website-on-google': [
+		'how to get my website to show up on google',
+		'how to get my website on google',
+		'how to make my website appear on google',
+		'how to get my website on google for free',
+		'how to get your website to the top of google',
+		'how to get my business to show up on google'
+	],
+	'/guides/branded-search': [
+		'branded search',
+		'brand serp',
+		'how to rank for my brand name',
+		'website not showing up when searching business name',
+		'site name in google search results',
+		'favicon not showing in google search',
+		'google sitelinks',
+		'organization schema'
+	],
+	'/guides/google-knowledge-panel': [
+		'google knowledge panel',
+		'how to get a google knowledge panel',
+		'claim knowledge panel',
+		'claim this knowledge panel',
+		'google knowledge panel verification',
+		'knowledge panel vs google business profile',
+		'entity seo'
 	],
 	'/guides/excluded-by-noindex-tag': [
 		"excluded by 'noindex' tag",

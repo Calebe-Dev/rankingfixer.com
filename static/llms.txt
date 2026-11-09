@@ -29,6 +29,7 @@ All countries are served remotely; Ranking Fixer has no local offices.
 ## Guides
 
 - [All technical SEO guides](https://rankingfixer.com/guides)
+- [How to get your website to show up on Google](https://rankingfixer.com/guides/how-to-get-your-website-on-google): the setup for a new site, found vs indexed vs ranking, and what moves a page up.
 - [Why is my website not showing up on Google?](https://rankingfixer.com/guides/website-not-showing-on-google)
 - [Website disappeared from Google? Causes and fixes](https://rankingfixer.com/guides/website-disappeared-from-google): for sites that used to rank; noindex, robots.txt, removals, manual actions, hacks and server problems, in order.
 - [Crawled - currently not indexed: how to fix it](https://rankingfixer.com/guides/crawled-currently-not-indexed)
@@ -43,6 +44,8 @@ All countries are served remotely; Ranking Fixer has no local offices.
 - [Blocked by robots.txt: how to fix it](https://rankingfixer.com/guides/blocked-by-robots-txt): blocked vs indexed though blocked, rules that block pages by accident, and a safe robots.txt.
 - [Vibe-coded website not indexed? Fix Lovable, Bolt and v0 SEO](https://rankingfixer.com/guides/vibe-coded-website-not-indexed): why AI-built single-page apps look empty to crawlers, how to test and how to fix.
 - [Keyword cannibalization: how to find and fix it](https://rankingfixer.com/guides/keyword-cannibalization): when the wrong page ranks; finding it in Search Console and choosing to merge, redirect or differentiate.
+- [Branded search: how to own the Google results for your brand](https://rankingfixer.com/guides/branded-search): ranking first for your own name; site name, favicon, logo and sitelinks.
+- [Google knowledge panel: how to get one and claim it](https://rankingfixer.com/guides/google-knowledge-panel): how Google decides, entity signals, and claiming the panel.
 - [llms.txt: what it is, who reads it, and whether you need one](https://rankingfixer.com/guides/llms-txt): the format, how it differs from robots.txt and what to fix first.
 
 ## About

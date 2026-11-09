@@ -15,6 +15,11 @@
 
 	const list = [
 		{
+			...guides.getOnGoogle,
+			title: 'How to get your website to show up on Google',
+			text: 'The setup that gets a new site found and indexed, how long each stage takes, and what moves a page from page five to page one.'
+		},
+		{
 			...guides.notShowing,
 			title: 'Why is my website not showing up on Google?',
 			text: 'Eight checks in order, platform settings for WordPress, Wix, Squarespace and Shopify, and what to do when the site is indexed but not ranking.'
@@ -83,6 +88,16 @@
 			...guides.cannibalization,
 			title: 'Keyword cannibalization: how to find and fix it',
 			text: 'When the wrong page ranks for your keyword: how to spot it in Search Console and whether to merge, redirect or differentiate.'
+		},
+		{
+			...guides.brandedSearch,
+			title: 'Branded search: how to own the Google results for your brand',
+			text: 'Ranking first for your own name, and fixing the site name, favicon, logo and sitelinks Google shows for it.'
+		},
+		{
+			...guides.knowledgePanel,
+			title: 'Google knowledge panel: how to get one and claim it',
+			text: 'How Google decides who gets a panel, the signals that make one more likely, and how to claim and edit it.'
 		},
 		{
 			...guides.llmsTxt,

@@ -81,7 +81,10 @@
 			low to be seen, or it was removed because of a penalty or a hack. The checks below find which one,
 			in the order that saves the most time.
 		</p>
-		<p>Most of them take a few minutes and need only free Google tools.</p>
+		<p>
+			Most of them take a few minutes and need only free Google tools. If the site has never been on Google,
+			start with <a href={guides.getOnGoogle.path}>how to get your website on Google</a> instead.
+		</p>
 	</header>
 
 	<section aria-labelledby="steps-title">
@@ -127,6 +130,17 @@
 			searches like "plumber in Austin", the site competes with businesses that have years of content,
 			links and reviews.
 		</p>
+	</section>
+
+	<section class="band" aria-labelledby="business-title">
+		<h2 id="business-title">Why is my business not showing up on Google?</h2>
+		<p>
+			"My business" can mean two different results, and each has its own fix:
+		</p>
+		<ul class="checks">
+			<li><strong>Not on Maps or in the local box:</strong> that is the Google Business Profile, not the website. Check that the profile is verified, not suspended, has the right category and service area, and that the name matches the sign on the door. The profile ranks by distance, relevance and reviews.</li>
+			<li><strong>The website does not come up for the business name:</strong> run the checks above first. If the site is indexed, the home page needs the exact business name in its title, main heading and Organization structured data, explained in <a href={guides.brandedSearch.path}>branded search</a>.</li>
+		</ul>
 		<p>
 			When the business shows on Maps but the website is missing from the results, remember that the
 			Business Profile and the website are ranked separately. The profile depends on proximity and
@@ -134,7 +148,7 @@
 		</p>
 	</section>
 
-	<section class="band" aria-labelledby="crawled-title">
+	<section aria-labelledby="crawled-title">
 		<h2 id="crawled-title">When Search Console says "crawled" or "discovered" but not indexed</h2>
 		<p>
 			These two statuses are the most common answer to "why is my page not on Google". Google either read
@@ -155,6 +169,7 @@
 	<Related
 		links={[
 			{ href: services.indexing.path, text: 'Have your indexing issues fixed' },
+			{ href: guides.getOnGoogle.path, text: 'How to get a new website on Google' },
 			{ href: guides.crawledNotIndexed.path, text: 'Crawled - currently not indexed' },
 			{ href: guides.disappeared.path, text: 'Site was on Google and disappeared' },
 			{ href: guides.sitemapNotRead.path, text: 'Sitemap could not be read' },
