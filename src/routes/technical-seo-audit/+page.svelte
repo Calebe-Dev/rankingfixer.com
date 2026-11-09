@@ -197,7 +197,9 @@
 			Sites built with Angular, React, Vue or Svelte can look perfect in a browser and still show Google
 			an almost empty page. The audit compares the HTML that Google renders with what visitors see and
 			checks server-side rendering or prerendering. I build Angular and Svelte applications in production, so the
-			fix goes beyond "add SSR" to the change that works in your codebase.
+			fix goes beyond "add SSR" to the change that works in your codebase. Sites generated with AI builders
+			like Lovable and Bolt have the same problem; the one-minute test is in
+			<a href={guides.vibeCoded.path}>vibe-coded website not indexed</a>.
 		</p>
 	</section>
 

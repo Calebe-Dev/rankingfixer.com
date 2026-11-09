@@ -14,7 +14,8 @@ const LAUNCH = '2026-10-25';
 // 26/10/2026: dados estruturados ampliados e Reino Unido no menu de todas as páginas
 // 29/10/2026: cinco guias novos no menu e no rodapé de todas as páginas
 // 31/10/2026: guias de llms.txt e de alternate canonical no menu e no rodapé de todas as páginas
-const SITEWIDE = '2026-10-31';
+// 09/11/2026: cinco guias novos (pautados pelas consultas do Search Console) no menu e no rodapé
+const SITEWIDE = '2026-11-09';
 const publishedOn: Record<string, string> = {
 	'/technical-seo-uk': '2026-10-26',
 	'/guides/discovered-currently-not-indexed': '2026-10-29',
@@ -23,17 +24,26 @@ const publishedOn: Record<string, string> = {
 	'/guides/sitemap-could-not-be-read': '2026-10-29',
 	'/guides/website-disappeared-from-google': '2026-10-29',
 	'/guides/llms-txt': '2026-10-31',
-	'/guides/alternate-page-with-proper-canonical-tag': '2026-10-31'
+	'/guides/alternate-page-with-proper-canonical-tag': '2026-10-31',
+	'/guides/vibe-coded-website-not-indexed': '2026-11-09',
+	'/guides/url-is-not-on-google': '2026-11-09',
+	'/guides/blocked-by-robots-txt': '2026-11-09',
+	'/guides/excluded-by-noindex-tag': '2026-11-09',
+	'/guides/keyword-cannibalization': '2026-11-09'
 };
 // 29/10/2026: title e H1 da home com "technical SEO consultant"; seção de WordPress no guia de Core
 // Web Vitals; links para os guias novos nas páginas do cluster de indexação e de migração
+// 09/11/2026: links para os guias novos na tabela de status do hub de indexação, na auditoria (sites
+// JavaScript), no guia de soft 404 e no de site fora do Google
 const modifiedOn: Record<string, string> = {
 	'/': '2026-10-29',
-	'/guides': '2026-10-29',
+	'/guides': '2026-11-09',
+	'/technical-seo-audit': '2026-11-09',
+	'/guides/soft-404': '2026-11-09',
 	'/guides/core-web-vitals-assessment-failed': '2026-10-29',
 	'/guides/crawled-currently-not-indexed': '2026-10-29',
-	'/guides/website-not-showing-on-google': '2026-10-29',
-	'/google-indexing-issues': '2026-10-29',
+	'/guides/website-not-showing-on-google': '2026-11-09',
+	'/google-indexing-issues': '2026-11-09',
 	'/seo-website-migration': '2026-10-29'
 };
 const latest = (...dates: (string | undefined)[]) => dates.filter(Boolean).sort().at(-1) as string;
@@ -137,6 +147,11 @@ export const guides = {
 	sitemapNotRead: { path: '/guides/sitemap-could-not-be-read', name: 'Sitemap could not be read' },
 	cwvFailed: { path: '/guides/core-web-vitals-assessment-failed', name: 'Core Web Vitals assessment failed' },
 	alternateCanonical: { path: '/guides/alternate-page-with-proper-canonical-tag', name: 'Alternate page with proper canonical tag' },
+	excludedNoindex: { path: '/guides/excluded-by-noindex-tag', name: "Excluded by 'noindex' tag" },
+	blockedRobots: { path: '/guides/blocked-by-robots-txt', name: 'Blocked by robots.txt' },
+	urlNotOnGoogle: { path: '/guides/url-is-not-on-google', name: 'URL is not on Google' },
+	vibeCoded: { path: '/guides/vibe-coded-website-not-indexed', name: 'Vibe-coded site not indexed' },
+	cannibalization: { path: '/guides/keyword-cannibalization', name: 'Keyword cannibalization' },
 	llmsTxt: { path: '/guides/llms-txt', name: 'llms.txt' }
 } as const;
 
@@ -230,7 +245,6 @@ export const pageKeywords: Record<string, string[]> = {
 		'why is google not indexing my site',
 		'google search console indexing issues',
 		'page with redirect google search console',
-		'excluded by noindex tag',
 		'how long does google indexing take'
 	],
 	'/seo-website-migration': [
@@ -407,6 +421,52 @@ export const pageKeywords: Record<string, string[]> = {
 		'cls issue more than 0.1',
 		'core web vitals assessment failed wordpress',
 		'core web vitals no data'
+	],
+	'/guides/excluded-by-noindex-tag': [
+		"excluded by 'noindex' tag",
+		'excluded by noindex tag',
+		'excluded by noindex tag fix',
+		'noindex tag',
+		'x-robots-tag noindex',
+		'submitted url marked noindex',
+		'wordpress discourage search engines'
+	],
+	'/guides/blocked-by-robots-txt': [
+		'blocked by robots.txt',
+		'blocked by robots.txt fix',
+		'indexed, though blocked by robots.txt',
+		'indexed though blocked by robots.txt',
+		'robots.txt disallow',
+		'robots.txt tester',
+		'shopify blocked by robots.txt'
+	],
+	'/guides/url-is-not-on-google': [
+		'url is not on google',
+		'how to fix url is not on google',
+		'indexing request rejected',
+		'how to fix indexing request rejected',
+		'page cannot be indexed: not available due to a site-wide issue',
+		'url is unknown to google',
+		'request indexing quota exceeded',
+		'url inspection tool'
+	],
+	'/guides/vibe-coded-website-not-indexed': [
+		'vibe coded website not ranking',
+		'vibe coded site not indexed',
+		'lovable seo',
+		'lovable website not showing on google',
+		'bolt.new seo',
+		'react seo',
+		'single page application seo',
+		'javascript seo'
+	],
+	'/guides/keyword-cannibalization': [
+		'keyword cannibalization',
+		'what is keyword cannibalization',
+		'how to fix keyword cannibalization',
+		'how to find keyword cannibalization',
+		'wrong page ranking for keyword',
+		'keyword cannibalization search console'
 	],
 	'/about': ['ranking fixer', 'calebe araujo', 'technical seo developer']
 };

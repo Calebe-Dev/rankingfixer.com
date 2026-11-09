@@ -114,7 +114,7 @@
 			</li>
 			<li>
 				<h3>Custom or JavaScript sites</h3>
-				<p>Check that the HTML has the content without running JavaScript, and that staging rules did not go live.</p>
+				<p>Check that the HTML has the content without running JavaScript, and that staging rules did not go live. Sites made with AI builders like Lovable have a <a href={guides.vibeCoded.path}>guide of their own</a>.</p>
 			</li>
 		</ul>
 	</section>

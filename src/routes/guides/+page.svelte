@@ -8,7 +8,7 @@
 	const path = guidesPage.path;
 	const title = 'Technical SEO Guides | Ranking Fixer';
 	const description =
-		'Technical SEO guides to Search Console problems: sites missing from Google, pages not indexed, canonicals, soft 404s, sitemaps, Core Web Vitals and llms.txt.';
+		'Technical SEO guides to Search Console problems: pages not indexed, noindex, robots.txt, canonicals, soft 404s, sitemaps, Core Web Vitals and AI-built sites.';
 	const email: Email = { subject: 'Question from the guides', label: 'Ask about your site' };
 
 	const crumbs = [{ name: guidesPage.name, path }];
@@ -58,6 +58,31 @@
 			...guides.alternateCanonical,
 			title: "Alternate page with proper canonical tag: when it's fine and when it isn't",
 			text: 'Which URLs are normal in the report, when the status hides a template bug, and how to fix a wrong canonical.'
+		},
+		{
+			...guides.urlNotOnGoogle,
+			title: 'URL is not on Google: how to fix it',
+			text: 'How to read URL Inspection, what "Indexing request rejected" and "Not available due to a site-wide issue" mean, and when requesting indexing helps.'
+		},
+		{
+			...guides.excludedNoindex,
+			title: "Excluded by 'noindex' tag: how to fix it",
+			text: 'The two places a noindex hides, where it comes from in WordPress, Wix, Shopify and hosts, and how to remove it for good.'
+		},
+		{
+			...guides.blockedRobots,
+			title: 'Blocked by robots.txt: how to fix it',
+			text: 'Blocked vs indexed though blocked, the rules that block pages by accident and a safe robots.txt for stores and service sites.'
+		},
+		{
+			...guides.vibeCoded,
+			title: 'Vibe-coded website not indexed? Fix Lovable, Bolt and v0 SEO',
+			text: 'Why sites built with AI app builders look empty to Google and AI crawlers, a one-minute test and the fix.'
+		},
+		{
+			...guides.cannibalization,
+			title: 'Keyword cannibalization: how to find and fix it',
+			text: 'When the wrong page ranks for your keyword: how to spot it in Search Console and whether to merge, redirect or differentiate.'
 		},
 		{
 			...guides.llmsTxt,

@@ -38,6 +38,11 @@ All countries are served remotely; Ranking Fixer has no local offices.
 - [Sitemap could not be read (couldn't fetch): how to fix it](https://rankingfixer.com/guides/sitemap-could-not-be-read): sitemap statuses, how to test the file and the causes Google lists.
 - [Core Web Vitals assessment failed: how to fix it](https://rankingfixer.com/guides/core-web-vitals-assessment-failed)
 - [Alternate page with proper canonical tag: when it's fine and when it isn't](https://rankingfixer.com/guides/alternate-page-with-proper-canonical-tag): which URLs are normal in the report and when the status hides a template bug.
+- [URL is not on Google: how to fix it](https://rankingfixer.com/guides/url-is-not-on-google): reading URL Inspection, "Indexing request rejected" and "Not available due to a site-wide issue".
+- [Excluded by 'noindex' tag: how to fix it](https://rankingfixer.com/guides/excluded-by-noindex-tag): the meta tag and the X-Robots-Tag header, and where unwanted noindex comes from in each platform.
+- [Blocked by robots.txt: how to fix it](https://rankingfixer.com/guides/blocked-by-robots-txt): blocked vs indexed though blocked, rules that block pages by accident, and a safe robots.txt.
+- [Vibe-coded website not indexed? Fix Lovable, Bolt and v0 SEO](https://rankingfixer.com/guides/vibe-coded-website-not-indexed): why AI-built single-page apps look empty to crawlers, how to test and how to fix.
+- [Keyword cannibalization: how to find and fix it](https://rankingfixer.com/guides/keyword-cannibalization): when the wrong page ranks; finding it in Search Console and choosing to merge, redirect or differentiate.
 - [llms.txt: what it is, who reads it, and whether you need one](https://rankingfixer.com/guides/llms-txt): the format, how it differs from robots.txt and what to fix first.
 
 ## About

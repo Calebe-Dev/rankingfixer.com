@@ -36,6 +36,9 @@
 		'Discovered - currently not indexed': guides.discoveredNotIndexed.path,
 		'Duplicate without user-selected canonical': guides.duplicateCanonical.path,
 		'Duplicate, Google chose different canonical than user': guides.duplicateCanonical.path,
+		'Alternate page with proper canonical tag': guides.alternateCanonical.path,
+		"Excluded by 'noindex' tag": guides.excludedNoindex.path,
+		'Blocked by robots.txt': guides.blockedRobots.path,
 		'Soft 404': guides.soft404.path
 	};
 
@@ -172,7 +175,9 @@
 		<p>
 			The statuses linked in the table have their own guides, starting with the most common one:
 			<a href={guides.crawledNotIndexed.path}>how to fix "Crawled - currently not indexed"</a>. When the
-			sitemap itself fails, see <a href={guides.sitemapNotRead.path}>"Sitemap could not be read"</a>.
+			sitemap itself fails, see <a href={guides.sitemapNotRead.path}>"Sitemap could not be read"</a>. For a
+			single page, <a href={guides.urlNotOnGoogle.path}>how to read "URL is not on Google"</a> explains each
+			URL Inspection result, including "Indexing request rejected".
 		</p>
 	</section>
 
