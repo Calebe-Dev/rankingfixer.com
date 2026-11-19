@@ -30,6 +30,11 @@
 		{ name: 'Validate the fix', text: 'Click Validate fix in Search Console. Indexing changes over weeks, not days, so track the count of indexed pages per template.' }
 	];
 
+	// Agrupa a exportação do relatório pelo primeiro segmento do caminho (CSV do Search Console)
+	const group = `cut -d, -f1 Table.csv | tail -n +2 \\
+  | sed -E 's#https?://[^/]+/([^/?]*).*#/\\1#' \\
+  | sort | uniq -c | sort -rn | head`;
+
 	const faqs: FaqItem[] = [
 		{
 			question: 'What does "Crawled - currently not indexed" mean?',
@@ -45,6 +50,11 @@
 			question: 'Should I request indexing for every page?',
 			answer:
 				'No. Requesting indexing helps when Google has not visited a page yet. For pages Google already crawled and rejected, a new request repeats the same decision. Fix the page or the links to it first, then request indexing for the most important URLs.'
+		},
+		{
+			question: 'Should I delete pages that are crawled but not indexed?',
+			answer:
+				'Only the ones with no value for visitors either, like empty tag archives, old test pages or expired listings. Pages that should rank are better improved, merged into a stronger page with a 301 redirect, or linked better. Deleting many pages at once without redirects can lose links and traffic they still had.'
 		},
 		{
 			question: 'Why did validation fail for "Crawled - currently not indexed"?',
@@ -148,6 +158,56 @@
 	<section aria-labelledby="fix-title">
 		<h2 id="fix-title">How to fix "Crawled - currently not indexed"</h2>
 		<Steps {steps} />
+	</section>
+
+	<section class="band" aria-labelledby="pattern-title">
+		<h2 id="pattern-title">Find the pattern in a few seconds</h2>
+		<p>
+			Export the examples from the report (Export, then CSV) and count the URLs by the first part of the path.
+			The section with the most URLs is almost always one template:
+		</p>
+		<pre><code>{group}</code></pre>
+		<p>
+			If most of the list is <code>/tag/</code>, <code>/author/</code> or <code>/page/</code>, those pages can
+			usually stay out of the index. If it is <code>/products/</code>, <code>/services/</code> or
+			<code>/blog/</code>, the template is producing pages Google does not find worth keeping, and that is the
+			one to fix first.
+		</p>
+	</section>
+
+	<section aria-labelledby="platforms-title">
+		<h2 id="platforms-title">Crawled - currently not indexed on WordPress, Shopify and job sites</h2>
+		<ul class="cards">
+			<li>
+				<h3>WordPress</h3>
+				<p>Tag, author, date and attachment pages that repeat posts in another order. Set them to noindex in the SEO plugin, or remove them, unless they have their own content.</p>
+			</li>
+			<li>
+				<h3>Shopify</h3>
+				<p>Products reached through <code>/collections/…/products/…</code> paths, variant URLs and blog tag pages. Keep links pointing to the canonical <code>/products/</code> URL.</p>
+			</li>
+			<li>
+				<h3>Wix, Squarespace and new sites</h3>
+				<p>Short service and location pages on a domain Google does not trust yet. Fewer, fuller pages index faster than many thin ones.</p>
+			</li>
+			<li>
+				<h3>Job boards and listings</h3>
+				<p>Thousands of near-identical listings and expired posts still online. Return 404 or 410 when a listing closes, and give each listing details no other one has.</p>
+			</li>
+			<li>
+				<h3>Programmatic and AI-written pages</h3>
+				<p>Pages generated for every keyword or city with the same structure. Google indexes a sample and leaves the rest crawled but not indexed.</p>
+			</li>
+			<li>
+				<h3>JavaScript sites</h3>
+				<p>Pages whose text appears only after scripts run, common in <a href={guides.vibeCoded.path}>sites built with AI app builders</a>. Google judges the near-empty first version.</p>
+			</li>
+		</ul>
+		<p>
+			When the same search is targeted by two pages of the site, Google often indexes one and leaves the other
+			here; that is <a href={guides.cannibalization.path}>keyword cannibalization</a>, and merging the two pages
+			fixes both problems.
+		</p>
 	</section>
 
 	<section class="band" aria-labelledby="discovered-title">

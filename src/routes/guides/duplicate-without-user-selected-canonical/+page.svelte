@@ -208,6 +208,11 @@
 			advice is not to point to different URLs with different methods, such as one URL in the sitemap and
 			another in the canonical tag.
 		</p>
+		<p>
+			When the copies are not technical duplicates but two different pages written for the same search, a
+			canonical is the wrong tool; that is <a href={guides.cannibalization.path}>keyword cannibalization</a>,
+			and the fix is to merge or differentiate the pages.
+		</p>
 	</section>
 
 	<section class="band" aria-labelledby="context-title">
@@ -215,7 +220,7 @@
 		<p>
 			A move to https, a new domain or a new URL structure creates a full set of copies until the redirects
 			and canonicals are right. That cleanup is part of every <a href={services.migration.path}>SEO website
-			migration</a>. On online stores, filters, variants and product paths are the largest source of
+			migration</a> and of the <a href={guides.migrationChecklist.path}>migration checklist</a>. On online stores, filters, variants and product paths are the largest source of
 			duplicate URLs, covered in <a href={industries.ecommerce.path}>ecommerce technical SEO</a>.
 		</p>
 		<p>

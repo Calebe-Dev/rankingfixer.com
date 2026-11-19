@@ -188,6 +188,10 @@
 				<h3>Before spending on content</h3>
 				<p>New articles and links do not help pages that Google cannot index or load.</p>
 			</li>
+			<li>
+				<h3>You already have a report</h3>
+				<p>A Semrush, Ahrefs or Screaming Frog audit full of errors and no one to fix them. See <a href={guides.auditErrors.path}>which SEO audit errors to fix first</a>.</p>
+			</li>
 		</ul>
 	</section>
 

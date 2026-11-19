@@ -87,7 +87,7 @@
 		<ul class="cards">
 			<li>
 				<h3>Practice area pages that compete</h3>
-				<p>A car accident page, a blog post and a city page all targeting the same search split the signals between them.</p>
+				<p>A car accident page, a blog post and a city page all targeting the same search split the signals between them. How to choose the winner is in <a href={guides.cannibalization.path}>keyword cannibalization</a>.</p>
 			</li>
 			<li>
 				<h3>Office pages treated as duplicates</h3>

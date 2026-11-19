@@ -112,6 +112,7 @@
 	<section class="band" aria-labelledby="checklist-title">
 		<h2 id="checklist-title">The SEO migration plan</h2>
 		<Steps {steps} />
+		<p>Every item of each phase, with a script to test the redirect map, is in the <a href={guides.migrationChecklist.path}>website migration SEO checklist</a>.</p>
 		<EmailCta {...email} />
 	</section>
 

@@ -177,7 +177,10 @@
 			<a href={guides.crawledNotIndexed.path}>how to fix "Crawled - currently not indexed"</a>. When the
 			sitemap itself fails, see <a href={guides.sitemapNotRead.path}>"Sitemap could not be read"</a>. For a
 			single page, <a href={guides.urlNotOnGoogle.path}>how to read "URL is not on Google"</a> explains each
-			URL Inspection result, including "Indexing request rejected".
+			URL Inspection result, including "Indexing request rejected" and
+			<a href={`${guides.urlNotOnGoogle.path}#sitewide-title`}>"Page cannot be indexed: Not available due to a
+			site-wide issue"</a>. To take pages out of Google on purpose, see
+			<a href={guides.removePage.path}>how to remove a page from Google</a>.
 		</p>
 	</section>
 

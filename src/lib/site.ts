@@ -16,7 +16,8 @@ const LAUNCH = '2026-10-25';
 // 31/10/2026: guias de llms.txt e de alternate canonical no menu e no rodapé de todas as páginas
 // 09/11/2026: cinco guias novos (pautados pelas consultas do Search Console) no menu e no rodapé, e
 // depois três de presença no Google e marca (pautados pelo Keyword Planner, EUA, inglês)
-const SITEWIDE = '2026-11-09';
+// 18/11/2026: mais cinco guias (ranquear melhor, remover páginas, erros de auditoria, migração, hreflang)
+const SITEWIDE = '2026-11-18';
 const publishedOn: Record<string, string> = {
 	'/technical-seo-uk': '2026-10-26',
 	'/guides/discovered-currently-not-indexed': '2026-10-29',
@@ -33,13 +34,20 @@ const publishedOn: Record<string, string> = {
 	'/guides/keyword-cannibalization': '2026-11-09',
 	'/guides/how-to-get-your-website-on-google': '2026-11-09',
 	'/guides/branded-search': '2026-11-09',
-	'/guides/google-knowledge-panel': '2026-11-09'
+	'/guides/google-knowledge-panel': '2026-11-09',
+	'/guides/how-to-rank-higher-on-google': '2026-11-18',
+	'/guides/remove-page-from-google': '2026-11-18',
+	'/guides/seo-audit-errors': '2026-11-18',
+	'/guides/website-migration-seo-checklist': '2026-11-18',
+	'/guides/hreflang': '2026-11-18'
 };
 // 29/10/2026: title e H1 da home com "technical SEO consultant"; seção de WordPress no guia de Core
 // Web Vitals; links para os guias novos nas páginas do cluster de indexação e de migração
 // 09/11/2026: links para os guias novos na tabela de status do hub de indexação, na auditoria (sites
 // JavaScript), no guia de soft 404 e no de site fora do Google; seção "business not showing up" no guia
 // de site fora do Google
+// 18/11/2026: links para os guias novos (auditoria, migração, Reino Unido, Canadá, hub de indexação,
+// noindex, URL Inspection e how-to-get, cuja seção "top of Google" virou resumo com link)
 const modifiedOn: Record<string, string> = {
 	'/': '2026-10-29',
 	'/guides': '2026-11-09',
@@ -141,6 +149,7 @@ export const pageLang = (path: string): string => Object.values(markets).find((m
 export const guidesPage = { path: '/guides', name: 'Guides' };
 export const guides = {
 	getOnGoogle: { path: '/guides/how-to-get-your-website-on-google', name: 'Get your website on Google' },
+	rankHigher: { path: '/guides/how-to-rank-higher-on-google', name: 'Rank higher on Google' },
 	notShowing: { path: '/guides/website-not-showing-on-google', name: 'Website not showing on Google' },
 	disappeared: { path: '/guides/website-disappeared-from-google', name: 'Website disappeared from Google' },
 	crawledNotIndexed: { path: '/guides/crawled-currently-not-indexed', name: 'Crawled - currently not indexed' },
@@ -158,6 +167,10 @@ export const guides = {
 	urlNotOnGoogle: { path: '/guides/url-is-not-on-google', name: 'URL is not on Google' },
 	vibeCoded: { path: '/guides/vibe-coded-website-not-indexed', name: 'Vibe-coded site not indexed' },
 	cannibalization: { path: '/guides/keyword-cannibalization', name: 'Keyword cannibalization' },
+	removePage: { path: '/guides/remove-page-from-google', name: 'Remove a page from Google' },
+	auditErrors: { path: '/guides/seo-audit-errors', name: 'SEO audit errors' },
+	migrationChecklist: { path: '/guides/website-migration-seo-checklist', name: 'Website migration checklist' },
+	hreflang: { path: '/guides/hreflang', name: 'Hreflang tags' },
 	brandedSearch: { path: '/guides/branded-search', name: 'Branded search results' },
 	knowledgePanel: { path: '/guides/google-knowledge-panel', name: 'Google knowledge panel' },
 	llmsTxt: { path: '/guides/llms-txt', name: 'llms.txt' }
@@ -437,8 +450,49 @@ export const pageKeywords: Record<string, string[]> = {
 		'how to get my website on google',
 		'how to make my website appear on google',
 		'how to get my website on google for free',
-		'how to get your website to the top of google',
 		'how to get my business to show up on google'
+	],
+	'/guides/how-to-rank-higher-on-google': [
+		'how to rank higher on google',
+		'how to improve google ranking',
+		'how to get your website to the top of google',
+		'how to make your website come up first on google',
+		'why is my website not ranking',
+		'website not ranking on google'
+	],
+	'/guides/remove-page-from-google': [
+		'noindex robots txt',
+		'robots.txt noindex',
+		'remove url from google',
+		'how to remove a page from google search',
+		'how to deindex a page from google',
+		'search console removals tool',
+		'404 vs 410'
+	],
+	'/guides/seo-audit-errors': [
+		'seo audit errors',
+		'how to fix seo audit errors',
+		'semrush site audit',
+		'ahrefs site audit',
+		'screaming frog errors',
+		'seo audit checklist',
+		'site health score'
+	],
+	'/guides/website-migration-seo-checklist': [
+		'website migration seo checklist',
+		'seo migration checklist',
+		'seo migration problems',
+		'redirect map',
+		'site migration seo recovery time',
+		'how long to keep 301 redirects'
+	],
+	'/guides/hreflang': [
+		'hreflang',
+		'hreflang tags',
+		'hreflang errors',
+		'hreflang en-gb',
+		'hreflang x-default',
+		'hreflang sitemap'
 	],
 	'/guides/branded-search': [
 		'branded search',

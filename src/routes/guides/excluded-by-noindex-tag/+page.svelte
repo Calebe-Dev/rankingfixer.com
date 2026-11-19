@@ -153,6 +153,11 @@ curl -s https://example.com/page | grep -io '<meta[^>]*noindex[^>]*>'`;
 			"Indexed, though blocked by robots.txt" status covered in <a href={guides.blockedRobots.path}>Blocked by
 			robots.txt</a>.
 		</p>
+		<p>
+			A <code>Noindex:</code> line inside robots.txt does nothing either: Google stopped reading it in 2019.
+			The right way to keep a page out of Google on purpose is in
+			<a href={guides.removePage.path}>how to remove a page from Google</a>.
+		</p>
 	</section>
 
 	<Faq {faqs} title="Questions about noindex" />

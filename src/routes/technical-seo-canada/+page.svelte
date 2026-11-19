@@ -6,7 +6,7 @@
 	import Related from '$lib/components/Related.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import { pageGraph, type Faq as FaqItem } from '$lib/schema';
-	import { industries, markets, services, type Email } from '$lib/site';
+	import { guides, industries, markets, services, type Email } from '$lib/site';
 
 	const path = markets.canada.path;
 	const title = 'Technical SEO Consultant in Canada | Ranking Fixer';
@@ -140,6 +140,7 @@
 				</tbody>
 			</table>
 		</div>
+		<p>When the same pages exist in more than one version, the codes, the setup and the usual errors are in the <a href={guides.hreflang.path}>hreflang guide</a>.</p>
 	</section>
 
 	<section aria-labelledby="cities-title">

@@ -9,7 +9,7 @@
 	import { guides, guidesPage, services, type Email } from '$lib/site';
 
 	const path = guides.urlNotOnGoogle.path;
-	const title = 'URL Is Not on Google: How to Fix It (and "Indexing Request Rejected") | Ranking Fixer';
+	const title = 'URL Is Not on Google and "Indexing Request Rejected": Fixes | Ranking Fixer';
 	const description =
 		'What "URL is not on Google", "Indexing request rejected" and "Not available due to a site-wide issue" mean in URL Inspection, and how to fix each.';
 	const email: Email = { subject: 'URL is not on Google', label: 'Send me the URL' };
@@ -61,6 +61,11 @@
 			question: 'How many times can I request indexing?',
 			answer:
 				'Search Console allows a small number of indexing requests per property per day and shows "Quota exceeded" when you reach it. Requesting the same URL again does not make it faster, so use the requests for new or fixed pages and let the sitemap cover the rest.'
+		},
+		{
+			question: 'What does "URL not in property" mean in URL Inspection?',
+			answer:
+				'It means the URL you pasted does not belong to the Search Console property you have open. A URL-prefix property for https://www.example.com does not cover http://, the version without www, or other subdomains. Switch to the matching property, or add a Domain property, which covers every protocol and subdomain.'
 		},
 		{
 			question: 'The live test passes, so why is the URL still not on Google?',
@@ -191,7 +196,7 @@
 			<li><strong>robots.txt report</strong> (Settings): if the file returns a server error or times out, Google pauses crawling of the whole site until it can read it again.</li>
 			<li><strong>Manual actions</strong> (Security &amp; Manual Actions): a site-wide action removes the site from results.</li>
 			<li><strong>Security issues:</strong> hacked content or malware can keep the site out.</li>
-			<li><strong>Removals:</strong> a removal request for the domain or for a prefix that covers the URL.</li>
+			<li><strong>Removals:</strong> a removal request for the domain or for a prefix that covers the URL, explained in <a href={guides.removePage.path}>how to remove a page from Google</a>.</li>
 		</ul>
 		<p>
 			When pages that used to rank are all gone, the full checklist is in

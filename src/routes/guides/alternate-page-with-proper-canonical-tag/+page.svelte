@@ -9,7 +9,7 @@
 	import { guides, guidesPage, industries, services, type Email } from '$lib/site';
 
 	const path = guides.alternateCanonical.path;
-	const title = "Alternate Page With Proper Canonical Tag: When It's Fine and When It Isn't | Ranking Fixer";
+	const title = 'Alternate Page With Proper Canonical Tag: Fix or Ignore? | Ranking Fixer';
 	const description =
 		'Alternate page with proper canonical tag usually needs no fix. See which URLs are expected in the report, when it hides a canonical bug and how to fix one.';
 	const email: Email = { subject: 'Alternate page with proper canonical tag', label: 'Have me check the canonicals' };

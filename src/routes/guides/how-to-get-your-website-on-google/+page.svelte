@@ -130,22 +130,25 @@
 			If a page is stuck before "indexed", the reason is in Search Console:
 			<a href={guides.discoveredNotIndexed.path}>discovered but not indexed</a>,
 			<a href={guides.crawledNotIndexed.path}>crawled but not indexed</a> or
-			<a href={guides.urlNotOnGoogle.path}>another reason in URL Inspection</a>. If the whole site is missing
+			<a href={guides.urlNotOnGoogle.path}>another reason in URL Inspection</a>. If Search Console says the
+			<a href={guides.sitemapNotRead.path}>sitemap could not be read</a>, fix that first. If the whole site is missing
 			after a few weeks, go through <a href={guides.notShowing.path}>why your website is not showing up on
 			Google</a>.
 		</p>
 	</section>
 
 	<section aria-labelledby="top-title">
-		<h2 id="top-title">How to get your website to the top of Google</h2>
-		<p>No setup trick puts a page at the top. What moves it there, roughly in order of effort:</p>
-		<ul class="checks">
-			<li><strong>One page per search intent.</strong> A page for "emergency plumber" and another for "bathroom remodeling" beats one page that lists everything. Two pages chasing the same search hold each other back, which is <a href={guides.cannibalization.path}>keyword cannibalization</a>.</li>
-			<li><strong>Answers people cannot get elsewhere.</strong> Prices, process, examples, photos of your own work, specific places you serve. Generic text is what Google already has plenty of.</li>
-			<li><strong>A fast site that works on phones.</strong> Most searches happen on a phone, and slow pages lose both visitors and close contests in the rankings. Check yours with <a href={guides.cwvFailed.path}>Core Web Vitals</a>.</li>
-			<li><strong>Links from sites people trust.</strong> Local press, associations, partners, suppliers and customers. A few real ones are worth more than hundreds from directories nobody visits.</li>
-			<li><strong>Your brand searched by name.</strong> People who look for you by name, and find exactly you, are a strong signal. <a href={guides.brandedSearch.path}>Branded search</a> covers how to make those results work for you.</li>
-		</ul>
+		<h2 id="top-title">From showing up to the top of Google</h2>
+		<p>
+			Getting indexed is the first job; climbing to page one is a second one. What moves a page up is
+			answering one search better than the current results, internal links from your strongest pages, a fast
+			site that works on phones, and links from sites people trust. The full process, in order of payoff, is
+			in <a href={guides.rankHigher.path}>how to rank higher on Google</a>.
+		</p>
+		<p>
+			Searches for your own business name come first and are the easiest to win;
+			<a href={guides.brandedSearch.path}>branded search</a> covers how to make those results work for you.
+		</p>
 	</section>
 
 	<section class="band" aria-labelledby="builders-title">
@@ -164,6 +167,7 @@
 	<Related
 		links={[
 			{ href: guides.notShowing.path, text: 'Website still not showing on Google?' },
+			{ href: guides.rankHigher.path, text: 'How to rank higher on Google' },
 			{ href: guides.brandedSearch.path, text: 'Show up properly for your brand name' },
 			{ href: guides.knowledgePanel.path, text: 'Getting a Google knowledge panel' },
 			{ href: guides.urlNotOnGoogle.path, text: 'URL is not on Google' },

@@ -20,6 +20,11 @@
 			text: 'The setup that gets a new site found and indexed, how long each stage takes, and what moves a page from page five to page one.'
 		},
 		{
+			...guides.rankHigher,
+			title: 'How to rank higher on Google',
+			text: 'Start from the searches you almost rank for, match the intent, fix what holds the site back and earn links, in order of payoff.'
+		},
+		{
 			...guides.notShowing,
 			title: 'Why is my website not showing up on Google?',
 			text: 'Eight checks in order, platform settings for WordPress, Wix, Squarespace and Shopify, and what to do when the site is indexed but not ranking.'
@@ -88,6 +93,26 @@
 			...guides.cannibalization,
 			title: 'Keyword cannibalization: how to find and fix it',
 			text: 'When the wrong page ranks for your keyword: how to spot it in Search Console and whether to merge, redirect or differentiate.'
+		},
+		{
+			...guides.removePage,
+			title: 'How to remove a page from Google',
+			text: 'Noindex, 404 or 410, redirects and the Removals tool compared, and why a noindex rule in robots.txt does nothing.'
+		},
+		{
+			...guides.auditErrors,
+			title: 'SEO audit errors: which to fix first',
+			text: 'The Semrush, Ahrefs and Screaming Frog warnings that cost rankings, the ones that can wait and the ones to ignore.'
+		},
+		{
+			...guides.migrationChecklist,
+			title: 'Website migration SEO checklist',
+			text: 'What to save before launch, test on launch day and watch after, for redesigns, new platforms and domain changes.'
+		},
+		{
+			...guides.hreflang,
+			title: 'Hreflang tags: setup and common errors',
+			text: 'Codes for the US, UK, Canada, Australia and New Zealand, three ways to add hreflang, and the errors that make the wrong version rank.'
 		},
 		{
 			...guides.brandedSearch,
