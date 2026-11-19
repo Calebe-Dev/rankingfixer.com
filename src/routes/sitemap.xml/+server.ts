@@ -1,12 +1,20 @@
-import { SITE_URL, modifiedDate } from '$lib/site';
+import { SITE_URL, modifiedDate, publishedDate } from '$lib/site';
 
 export const prerender = true;
 
 // Todas as páginas do site, descobertas no build: página nova entra no sitemap sozinha.
+// Ordem: home primeiro, depois das páginas publicadas mais recentemente para as mais antigas
+// (empate: última alteração, depois o caminho), para as novas aparecerem no topo do arquivo.
 const paths = Object.keys(import.meta.glob('/src/routes/**/+page.svelte'))
 	.map((file) => file.replace('/src/routes', '').replace('/+page.svelte', '') || '/')
 	.filter((path) => !path.includes('['))
-	.sort();
+	.sort(
+		(a, b) =>
+			Number(b === '/') - Number(a === '/') ||
+			publishedDate(b).localeCompare(publishedDate(a)) ||
+			modifiedDate(b).localeCompare(modifiedDate(a)) ||
+			a.localeCompare(b)
+	);
 
 export function GET() {
 	const urls = paths
